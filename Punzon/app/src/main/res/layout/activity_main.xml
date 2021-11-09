@@ -11,6 +11,20 @@
     android:paddingRight="16dp"
     android:paddingBottom="16dp">
 
+    <Button
+        android:id="@+id/btnVenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="EmpleadoEspecial"
+        android:text="Visitar Tienda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintVertical_bias="0.325"
+        tools:ignore="UsingOnClickInXml" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="376dp"
@@ -31,10 +45,10 @@
         android:text="@string/irEmEspecial"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.036"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="UsingOnClickInXml" />
 
     <Button

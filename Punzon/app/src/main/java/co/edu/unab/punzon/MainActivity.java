@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity  {
         startActivity(empleadoespecial);
     }
 
-
+//Método ir a la tienda
+    public void VerTienda(View view){
+        Intent producto = new Intent(this, ProductosActivity.class);
+        startActivity(producto);
+    }
 
     }
