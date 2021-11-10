@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Punzon">
         <activity
+            android:name=".inventario.ModificarInventario"
+            android:exported="false" />
+        <activity
             android:name=".ProductosActivity"
             android:exported="false" />
         <activity
