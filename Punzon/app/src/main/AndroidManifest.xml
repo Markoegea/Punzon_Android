@@ -23,6 +23,9 @@
             android:name=".EmpleadoEspecial"
             android:exported="false" />
         <activity
+            android:name=".RegistroClientes"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

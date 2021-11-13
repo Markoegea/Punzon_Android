@@ -22,8 +22,8 @@ public class RegistroEmpleados extends AppCompatActivity {
 
         etname = (EditText) findViewById(R.id.txtname);
         etname2 = (EditText) findViewById(R.id.txtname2);
-        etlastname = (EditText) findViewById(R.id.txtlast_name);
-        etlastname2 = (EditText) findViewById(R.id.txtlast_name2);
+        etlastname = (EditText) findViewById(R.id.txtlastname);
+        etlastname2 = (EditText) findViewById(R.id.txtlastname2);
         etid = (EditText) findViewById(R.id.txtid);
         etusarname = (EditText) findViewById(R.id.txtusername);
         etpassword = (EditText) findViewById(R.id.txtpassword);
@@ -31,7 +31,6 @@ public class RegistroEmpleados extends AppCompatActivity {
         spid = (Spinner) findViewById(R.id.spid_type);
         sptemp = (Spinner) findViewById(R.id.spempleado_type);
         spcargo = (Spinner) findViewById(R.id.spcargo_type);
-
 
         btnregisempleado = (Button) findViewById(R.id.btnRegisEmpleado);
     }

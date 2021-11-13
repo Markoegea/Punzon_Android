@@ -21,6 +21,7 @@
     <string name="email">Email</string>
     <string name="action_register_short">Registrar</string>
     <string name="irREmpleado">Registro Empleados</string>
+    <string name="irRCliente">Registro Clientes</string>
     <string name="irEmEspecial">Empleado Especial</string>
     <string name="irMenu">Menu Principal</string>
     <string name="txtIdType">Tipo documento</string>

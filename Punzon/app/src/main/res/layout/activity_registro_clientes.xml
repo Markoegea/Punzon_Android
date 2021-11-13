@@ -5,33 +5,31 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#3949AB"
+    android:onClick="Menu"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
-    tools:context=".RegistroEmpleados">
+    tools:context=".RegistroClientes">
 
-    <TextView
-        android:id="@+id/txtCargo"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/txtCargo"
-        android:textAlignment="center"
-        android:textSize="12sp"
+    <Button
+        android:id="@+id/btnRegCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="64dp"
+        android:backgroundTint="#3949AB"
+        android:enabled="false"
+        android:text="@string/action_register_short"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spempleado_type" />
-
-    <TextView
-        android:id="@+id/txtEmpType2"
-        android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/txtEmType"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtid" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordCliente"
+        app:layout_constraintVertical_bias="0.168" />
 
     <TextView
         android:id="@+id/txtIdType2"
@@ -42,34 +40,10 @@
         android:textAlignment="center"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtlastname" />
-
-    <Spinner
-        android:id="@+id/spcargo_type"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/empleado_cargo_array"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txtCargo"
-        app:layout_constraintTop_toBottomOf="@+id/spempleado_type"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <Spinner
-        android:id="@+id/spempleado_type"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:entries="@array/empleado_type_array"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/txtEmpType2"
-        app:layout_constraintTop_toBottomOf="@+id/txtid"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/apeCliente" />
 
     <EditText
-        android:id="@+id/txtlastname2"
+        android:id="@+id/apeCliente2"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -79,12 +53,12 @@
         android:minHeight="40dp"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtlastname"
-        app:layout_constraintTop_toBottomOf="@+id/txtname2"
+        app:layout_constraintStart_toEndOf="@+id/apeCliente"
+        app:layout_constraintTop_toBottomOf="@+id/nomCliente2"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtname2"
+        android:id="@+id/nomCliente2"
         android:layout_width="189dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -95,12 +69,12 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/txtname"
+        app:layout_constraintStart_toEndOf="@+id/nomCliente"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtlastname"
+        android:id="@+id/apeCliente"
         android:layout_width="189dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -110,11 +84,11 @@
         android:minHeight="40dp"
         android:selectAllOnFocus="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtname"
+        app:layout_constraintTop_toBottomOf="@+id/nomCliente"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtid"
+        android:id="@+id/idCliente"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -126,11 +100,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spid_type"
+        app:layout_constraintTop_toBottomOf="@+id/spid_cliente"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/txtname"
+        android:id="@+id/nomCliente"
         android:layout_width="189dp"
         android:layout_height="40dp"
         android:layout_marginTop="16dp"
@@ -144,23 +118,23 @@
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtusername"
+        android:id="@+id/userCliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="23dp"
         android:autofillHints="@string/prompt_email"
         android:hint="@string/nameUsuario"
         android:inputType="textEmailAddress"
         android:minHeight="40dp"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spcargo_type"
+        app:layout_constraintTop_toBottomOf="@+id/idCliente"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
-        android:id="@+id/txtpassword"
+        android:id="@+id/passwordCliente"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -172,25 +146,10 @@
         android:minHeight="40dp"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtusername"
+        app:layout_constraintTop_toBottomOf="@+id/userCliente"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
-
-    <Button
-        android:id="@+id/btnRegisEmpleado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="32dp"
-        android:backgroundTint="#3949AB"
-        android:enabled="false"
-        android:text="@string/action_register_short"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/irMenu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/irMenu"
-        app:layout_constraintVertical_bias="0.165" />
 
     <ProgressBar
         android:id="@+id/loading"
@@ -201,13 +160,13 @@
         android:layout_marginBottom="64dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtpassword"
-        app:layout_constraintStart_toStartOf="@+id/txtpassword"
+        app:layout_constraintEnd_toEndOf="@+id/passwordCliente"
+        app:layout_constraintStart_toStartOf="@+id/passwordCliente"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3" />
 
     <Spinner
-        android:id="@+id/spid_type"
+        android:id="@+id/spid_cliente"
         android:layout_width="220dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
@@ -215,7 +174,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/txtIdType2"
-        app:layout_constraintTop_toBottomOf="@+id/txtlastname"
+        app:layout_constraintTop_toBottomOf="@+id/apeCliente"
         tools:ignore="TouchTargetSizeCheck" />
 
     <ImageView
@@ -229,20 +188,18 @@
         app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/irMenu"
-        android:layout_width="wrap_content"
+        android:id="@+id/irMenu3"
+        android:layout_width="163dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="32dp"
         android:backgroundTint="#B65538"
         android:onClick="MenuCli"
         android:text="@string/irMenu"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRegCliente"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.214"
-        app:layout_constraintStart_toEndOf="@+id/btnRegisEmpleado"
-        app:layout_constraintTop_toBottomOf="@+id/txtpassword"
-        app:layout_constraintVertical_bias="0.131"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btnRegCliente"
+        app:layout_constraintTop_toTopOf="@+id/btnRegCliente"
+        app:layout_constraintVertical_bias="0.137" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

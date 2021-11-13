@@ -1,29 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/container"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp">
-
-    <Button
-        android:id="@+id/btnVenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="VerTienda"
-        android:text="Visitar Tienda"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.325"
-        tools:ignore="UsingOnClickInXml" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -37,31 +22,64 @@
 
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
-        android:onClick="EmpleadoEspecial"
-        android:text="@string/irEmEspecial"
+        android:id="@+id/regEmpl"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="Empleados"
+        android:text="@string/irREmpleado"
+        app:layout_constraintEnd_toEndOf="@+id/regCli"
+        app:layout_constraintEnd_toStartOf="@+id/empEsp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/regCli"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/regCli"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="76dp"
+        android:backgroundTint="#B65538"
+        android:onClick="Clientes"
+        android:text="@string/irRCliente"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintEnd_toStartOf="@+id/btnVenta"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/regEmpl"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnVenta"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:backgroundTint="#3F51B5"
+        android:onClick="VerTienda"
+        android:text="Visitar Tienda"
+        app:layout_constraintBottom_toBottomOf="@+id/regCli"
+        app:layout_constraintEnd_toEndOf="@+id/empEsp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/empEsp"
+        app:layout_constraintTop_toTopOf="@+id/regCli"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="UsingOnClickInXml" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:onClick="Empleados"
-        android:text="@string/irREmpleado"
+        android:id="@+id/empEsp"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:backgroundTint="#B65538"
+        android:onClick="EmpleadoEspecial"
+        android:text="@string/irEmEspecial"
+        app:layout_constraintBottom_toBottomOf="@+id/regEmpl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="UsingOnClickInXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

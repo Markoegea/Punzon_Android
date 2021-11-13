@@ -38,10 +38,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:onClick="Menu"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#B65538"
+        android:onClick="MenuCli"
         android:text="@string/irMenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnRegEmEspecial"
         app:layout_constraintTop_toBottomOf="@+id/txt_password"
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="UsingOnClickInXml" />
@@ -254,8 +258,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#3D5AFE"
         android:text="@string/action_register_short"
         app:layout_constraintEnd_toStartOf="@+id/irMenu2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_password" />
 
