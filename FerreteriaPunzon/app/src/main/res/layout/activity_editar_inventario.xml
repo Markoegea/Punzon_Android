@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".inventario.ModificarInventario">
+    tools:context=".Inventario.EditarInventario">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.439">
 
         <ImageView
-            android:id="@+id/imgProducto"
+            android:id="@+id/ImgProducto"
             android:layout_width="match_parent"
             android:layout_height="208dp"
             tools:srcCompat="@tools:sample/avatars" />

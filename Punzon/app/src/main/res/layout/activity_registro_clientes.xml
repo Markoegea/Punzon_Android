@@ -13,24 +13,6 @@
     android:paddingBottom="16dp"
     tools:context=".RegistroClientes">
 
-    <Button
-        android:id="@+id/btnRegCliente"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="64dp"
-        android:backgroundTint="#3949AB"
-        android:enabled="false"
-        android:text="@string/action_register_short"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordCliente"
-        app:layout_constraintVertical_bias="0.168" />
-
     <TextView
         android:id="@+id/txtIdType2"
         android:layout_width="wrap_content"
@@ -191,15 +173,26 @@
         android:id="@+id/irMenu3"
         android:layout_width="163dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:backgroundTint="#B65538"
-        android:onClick="MenuCli"
         android:text="@string/irMenu"
-        app:layout_constraintBottom_toBottomOf="@+id/btnRegCliente"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnRegCliente"
-        app:layout_constraintTop_toTopOf="@+id/btnRegCliente"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.749" />
+
+    <Button
+        android:id="@+id/btnRegCliente"
+        android:layout_width="163dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="@string/action_register_short"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/irMenu3"
+        app:layout_constraintHorizontal_bias="0.26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.748" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

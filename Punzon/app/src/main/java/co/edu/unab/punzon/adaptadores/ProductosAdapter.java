@@ -65,7 +65,6 @@ private int intPosition;
             imv.setImageResource(productos.get(position).getImagen());
             txvNombre.setText(productos.get(position).getNombre());
             txvPrecio.setText("" + productos.get(position).getPrecio());
-
         }
 
         @Override
