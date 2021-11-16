@@ -24,23 +24,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Documento"
-                android:textSize="15sp"/>
+                android:textColor="#E45D1E"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txvNom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre"
                 android:layout_margin="20dp"
-                android:textSize="15sp"/>
+                android:text="Nombre"
+                android:textColor="#2A91DF"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txvApe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Apellido"
                 android:layout_margin="20dp"
-                android:textSize="15sp"/>
+                android:text="Apellido"
+                android:textColor="#2A91DF"
+                android:textSize="15sp" />
 
 
         </LinearLayout>

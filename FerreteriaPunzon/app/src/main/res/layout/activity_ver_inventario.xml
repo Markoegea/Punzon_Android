@@ -45,7 +45,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Nombre:"
+                    android:textColor="#E45D1E"
                     android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -53,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Marca:"
+                    android:textColor="#E45D1E"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -67,7 +74,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Nombre"
+                    android:textColor="#2A91DF"
                     android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/TvMarca"
@@ -75,15 +88,21 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Marca"
+                    android:textColor="#2A91DF"
                     android:textSize="18sp" />
 
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
 
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripcion:"
+                android:textColor="#E45D1E"
                 android:textSize="18sp" />
 
             <TextView
@@ -91,7 +110,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripcion"
+                android:textColor="#2A91DF"
                 android:textSize="18sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="39dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -104,7 +128,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Precio:"
+                    android:textColor="#E45D1E"
                     android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/textView16"
@@ -112,6 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cantidad:"
+                    android:textColor="#E45D1E"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -126,7 +157,13 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Precio"
+                    android:textColor="#2A91DF"
                     android:textSize="18sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/TvCantidad"
@@ -134,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Cantidad"
+                    android:textColor="#2A91DF"
                     android:textSize="18sp" />
 
             </LinearLayout>
