@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FerreteriaPunzon">
         <activity
+            android:name=".Vistas.DatosEmpleadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Registro.RegistroEmpleados"
+            android:exported="false" />
+        <activity
             android:name=".Inventario.EditarInventario"
             android:exported="false" />
         <activity
