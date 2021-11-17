@@ -3,6 +3,7 @@ package com.titantec.ferreteriapunzon.Inventario;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,7 +11,7 @@ import com.titantec.ferreteriapunzon.R;
 
 public class EditarInventario extends AppCompatActivity {
 
-    TextView txvnombre,txvid,txvprecio,txvdescripcion,txvcantidad,txvmarca;
+    EditText txvnombre,txvid,txvprecio,txvdescripcion,txvcantidad,txvmarca;
     ImageView imgproducto;
     String nombre;
     long id;

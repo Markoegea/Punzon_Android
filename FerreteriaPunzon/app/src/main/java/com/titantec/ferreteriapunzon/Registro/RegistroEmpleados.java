@@ -189,7 +189,7 @@ public class RegistroEmpleados extends AppCompatActivity {
 
         firestore.collection("Empleados").document(etDocumento.getText().toString()).update(empleado);
 
-        Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Datos actualizados correctamente", Toast.LENGTH_LONG).show();
 
     }
 
