@@ -61,7 +61,6 @@ public class ProductoAdapter extends FirestoreRecyclerAdapter <Producto, Product
                 @Override
                 public void onClick(View v) {
                     Intent abrir = new Intent(context, VerInventario.class);
-
                     abrir.putExtra("Nombre",productos.get(getLayoutPosition()).getNombre());
                     abrir.putExtra("Id",productos.get(getLayoutPosition()).getId());
                     abrir.putExtra("Precio",productos.get(getLayoutPosition()).getPrecio());

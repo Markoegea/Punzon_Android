@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Punzon</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in_short">Iniciar sesión</string>
+    <string name="welcome">Bienvenido!!!</string>
+    <string name="invalid_username">Usuario no válido</string>
+    <string name="invalid_password">La contraselade debe > 5 caracteres</string>
+    <string name="login_failed">"Falló el inicio de sesión"</string>
+    <!-- Strings related to register -->
+    <string name="name">Nombre</string>
+    <string name="name2">Nombre 2</string>
+    <string name="nameUsuario">Email Usuario</string>
+    <string name="last_name">Apellido</string>
+    <string name="last_name2">Apellido 2</string>
+    <string name="id_type">Tipo de ID</string>
+    <string name="empleado_type">Tipo de Empleado</string>
+    <string name="id">Documento</string>
+    <string name="address">Dirección</string>
+    <string name="mobile">Teléfono móvil</string>
+    <string name="email">Email</string>
+    <string name="action_register_short">Registrar</string>
+    <string name="irREmpleado">Registro Empleados</string>
+    <string name="irRCliente">Registro Clientes</string>
+    <string name="irEmEspecial">Empleado Especial</string>
+    <string name="irVentas">Ventas</string>
+    <string name="irMenu">Menu Principal</string>
+    <string name="irVistaEmpleados">Ver Empleados</string>
+    <string name="txtIdType">Tipo documento</string>
+    <string name="txtEmType">Tipo Empleado</string>
+    <string name="txtCargo">Cargo</string>
+    <string name="txtEspecialidad">Especialidad</string>
+    <string name="descripcionImagen">Imagen</string>
+    <string name="btnEliminar">ELIMINAR</string>
+    <string name="btnEditar">EDITAR</string>
+    <string name="btnConsultar">CONSULTAR</string>
+    <string name="btnGenerarNombreUsuario">GENERAR</string>
+    <string name="numero">Numero de telefono</string>
+    <string-array name="id_type_array">
+        <item>Seleccione...</item>
+        <item>Cédula de ciudadanía</item>
+        <item>Tarjeta de identidad</item>
+        <item>Cedula de extranjería</item>
+        <item>Pasaporte</item>
+    </string-array>
+    <string-array name="empleado_cargo_array">
+        <item>Seleccione...</item>
+        <item>Gerente</item>
+        <item>Contador</item>
+        <item>Vendedor</item>
+        <item>Asesor comercial</item>
+        <item>Auxuliar de bodega</item>
+        <item>Jefe de bodega</item>
+        <item>Domiciliario</item>
+        <item>Vendedor</item>
+        <item>Conductor</item>
+        <item>Servicios generales</item>
+        <item>Servicios especiales</item>
+    </string-array>
+    <string-array name="empleado_type_array">
+        <item>Seleccione...</item>
+        <item>Planta</item>
+        <item>Prestador de servicios</item>
+    </string-array>
+    <string-array name="empleado_especialidad_array">
+        <item>Seleccione...</item>
+        <item>No aplica</item>
+        <item>Maestro de obra</item>
+        <item>Plomero</item>
+        <item>Eléctrico</item>
+        <item>Soldador</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

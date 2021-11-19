@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/Main_Page">
+
+    <fragment
+        android:id="@+id/Main_Page"
+        android:name="com.titantec.punzon.MainPage"
+        android:label="Catalogo"
+        tools:layout="@layout/main_page" >
+        <action
+            android:id="@+id/action_Main_Page_to_Ver_Inventario2"
+            app:destination="@id/Ver_Inventario" />
+        <action
+            android:id="@+id/action_Main_Page_to_Registro_Clientes"
+            app:destination="@id/Registro_Clientes" />
+        <action
+            android:id="@+id/action_Main_Page_to_Ver_Empleados"
+            app:destination="@id/Ver_Empleados" />
+    </fragment>
+    <fragment
+        android:id="@+id/Registro_Clientes"
+        android:name="com.titantec.punzon.Clientes.RegistroClientes"
+        android:label="Registro Clientes"
+        tools:layout="@layout/activity_registro_clientes" >
+        <action
+            android:id="@+id/action_Registro_Clientes_to_Main_Page"
+            app:destination="@id/Main_Page" />
+    </fragment>
+    <fragment
+        android:id="@+id/Ver_Empleados"
+        android:name="com.titantec.punzon.Empleados.DatosEmpleadoActivity"
+        android:label="Empleados"
+        tools:layout="@layout/activity_datos_empleado" >
+        <action
+            android:id="@+id/action_Ver_Empleados_to_Main_Page"
+            app:destination="@id/Main_Page" />
+    </fragment>
+    <fragment
+        android:id="@+id/Ver_Inventario"
+        android:name="com.titantec.punzon.Inventario.VerInventario"
+        android:label="Inventario"
+        tools:layout="@layout/fragment_ver_inventario" >
+        <action
+            android:id="@+id/action_Ver_Inventario_to_Main_Page2"
+            app:destination="@id/Main_Page" />
+    </fragment>
+</navigation>

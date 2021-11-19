@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         rv=findViewById(R.id.recyclerView);
-        rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+
         btnEmpleados=findViewById(R.id.BtnEmpleado);
         btnVistaEmpleados=findViewById(R.id.BtnVistaEmpleado);
         btnEmpleados.setOnClickListener(new View.OnClickListener() {
