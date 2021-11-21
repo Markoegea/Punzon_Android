@@ -25,8 +25,6 @@ public class VerInventario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_inventario);
 
-
-
         txvnombre=findViewById(R.id.TvNombre);
         txvprecio=findViewById(R.id.TvPrecio);
         txvdescripcion=findViewById(R.id.TvDescripcion);

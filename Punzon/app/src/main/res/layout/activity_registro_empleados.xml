@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".Empleados.RegistrarEmpleados">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/descripcionImagen"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <EditText
+            android:id="@+id/txtname"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:autofillHints="@string/prompt_email"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/txtlastname"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:autofillHints="@string/prompt_email"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:minHeight="40dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/EdtNumero"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:ems="10"
+            android:hint="@string/numero"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtIdType2"
+                android:layout_width="97dp"
+                android:layout_height="match_parent"
+                android:text="@string/txtIdType"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spid_type"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtDocumento"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="@string/id"
+            android:inputType="number"
+            android:minHeight="40dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtEmpType2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/txtEmType"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spempleado_type"
+                android:layout_width="207dp"
+                android:layout_height="match_parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtCargo"
+                android:layout_width="108dp"
+                android:layout_height="match_parent"
+                android:text="@string/txtCargo"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spcargo_type"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="318dp"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtEspType2"
+                android:layout_width="107dp"
+                android:layout_height="match_parent"
+                android:text="@string/txtEspecialidad"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <Spinner
+                android:id="@+id/spespempleado_type"
+                android:layout_width="213dp"
+                android:layout_height="match_parent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="348dp"
+            android:layout_height="47dp"
+            android:autofillHints="@string/prompt_email"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:minHeight="40dp"
+            android:selectAllOnFocus="true"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/txtpassword"
+            android:layout_width="347dp"
+            android:layout_height="45dp"
+            android:autofillHints="@string/prompt_password"
+            android:hint="@string/prompt_password"
+            android:imeActionLabel="@string/action_sign_in_short"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:minHeight="40dp"
+            android:password="true"
+            android:selectAllOnFocus="true"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/btnRegisEmpleado"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:backgroundTint="#3949AB"
+            android:text="@string/action_register_short"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

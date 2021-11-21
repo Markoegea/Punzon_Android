@@ -19,6 +19,12 @@
         <action
             android:id="@+id/action_Main_Page_to_Ver_Empleados"
             app:destination="@id/Ver_Empleados" />
+        <action
+            android:id="@+id/action_Main_Page_to_Registro_Empleados"
+            app:destination="@id/Registro_Empleados" />
+        <action
+            android:id="@+id/action_Main_Page_to_Mi_cuenta"
+            app:destination="@id/Mi_cuenta" />
     </fragment>
     <fragment
         android:id="@+id/Registro_Clientes"
@@ -45,6 +51,36 @@
         tools:layout="@layout/fragment_ver_inventario" >
         <action
             android:id="@+id/action_Ver_Inventario_to_Main_Page2"
+            app:destination="@id/Main_Page" />
+    </fragment>
+    <fragment
+        android:id="@+id/Registro_Empleados"
+        android:name="com.titantec.punzon.Empleados.RegistrarEmpleados"
+        android:label="Registro Empleados"
+        tools:layout="@layout/activity_registro_empleados" >
+        <action
+            android:id="@+id/action_Registro_Empleados_to_Main_Page"
+            app:destination="@id/Main_Page" />
+    </fragment>
+    <fragment
+        android:id="@+id/Mi_cuenta"
+        android:name="com.titantec.punzon.Cuenta.Ingreso"
+        android:label="Mi cuenta"
+        tools:layout="@layout/activity_ingreso" >
+        <action
+            android:id="@+id/action_Mi_cuenta_to_Main_Page"
+            app:destination="@id/Main_Page" />
+    </fragment>
+    <fragment
+        android:id="@+id/Mi_cuenta_Ingreso"
+        android:name="com.titantec.punzon.Cuenta.InformacionCuenta"
+        android:label="Mi cuenta2"
+        tools:layout="@layout/activity_informacion_cuenta" >
+        <action
+            android:id="@+id/action_Mi_cuentaIngreso_to_Mi_cuenta"
+            app:destination="@id/Mi_cuenta" />
+        <action
+            android:id="@+id/action_Mi_cuentaIngreso_to_Main_Page"
             app:destination="@id/Main_Page" />
     </fragment>
 </navigation>
