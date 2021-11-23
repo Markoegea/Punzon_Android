@@ -1,5 +1,6 @@
 package com.titantec.punzon.Empleados;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.titantec.punzon.MainActivity;
 import com.titantec.punzon.R;
 import com.titantec.punzon.databinding.ActivityRegistroEmpleadosBinding;
 
@@ -121,42 +123,47 @@ public class RegistrarEmpleados extends Fragment {
         }
     }
     private void registrar(View v) {
-        auth.createUserWithEmailAndPassword(etEmail.getText().toString(),etpassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        if(auth.getCurrentUser()!=null) {
+            Toast.makeText(v.getContext(), "Ya estas registrado", Toast.LENGTH_SHORT).show();
+        } else {
+            auth.createUserWithEmailAndPassword(etEmail.getText().toString(), etpassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful())
-                {
-                    String id = auth.getUid();
-                    Map<String, Object> empleado = new HashMap<>();
-                    empleado.put("nombre", etname.getText().toString());
-                    empleado.put("apellido", etlastname.getText().toString());
-                    empleado.put("tipoDocumento", spid.getSelectedItem().toString());
-                    empleado.put("tipoEmpleado", sptemp.getSelectedItem().toString());
-                    empleado.put("cargo", spcargo.getSelectedItem().toString());
-                    empleado.put("especialidad", spespecialidad.getSelectedItem().toString());
-                    empleado.put("email", etEmail.getText().toString());
-                    empleado.put("contraseña", etpassword.getText().toString());
-                    empleado.put("numero", edtNumero.getText().toString());
-                    empleado.put("numero_de_documento",etDocumento.getText().toString());
-                    firestore.collection("Empleados").document(id).set(empleado).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task2) {
-                            if(task2.isSuccessful()){
-                                Toast.makeText(v.getContext(),"Registro Exitoso",Toast.LENGTH_SHORT).show();
-                                limpiar();
-                            } else{
-                                Toast.makeText(v.getContext(),"Fallo en el registro, " +
-                                        "Revisalo y Intentalo otra vez",Toast.LENGTH_SHORT).show();
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        String id = auth.getUid();
+                        Map<String, Object> empleado = new HashMap<>();
+                        empleado.put("nombre", etname.getText().toString());
+                        empleado.put("apellido", etlastname.getText().toString());
+                        empleado.put("tipoDocumento", spid.getSelectedItem().toString());
+                        empleado.put("tipoEmpleado", sptemp.getSelectedItem().toString());
+                        empleado.put("cargo", spcargo.getSelectedItem().toString());
+                        empleado.put("especialidad", spespecialidad.getSelectedItem().toString());
+                        empleado.put("email", etEmail.getText().toString());
+                        empleado.put("contraseña", etpassword.getText().toString());
+                        empleado.put("numero", edtNumero.getText().toString());
+                        empleado.put("numero_de_documento", etDocumento.getText().toString());
+                        firestore.collection("Empleados").document(id).set(empleado).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task2) {
+                                if (task2.isSuccessful()) {
+                                    Toast.makeText(v.getContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show();
+                                    limpiar();
+                                    Intent inte = new Intent(v.getContext(), MainActivity.class);
+                                    startActivity(inte);
+                                } else {
+                                    Toast.makeText(v.getContext(), "Fallo en el registro, " +
+                                            "Revisalo y Intentalo otra vez", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
-                } else {
-                    Toast.makeText(v.getContext(),"Fallo en el registro, " +
-                            "Revisalo y Intentalo otra vez",Toast.LENGTH_SHORT).show();
+                        });
+                    } else {
+                        Toast.makeText(v.getContext(), "Fallo en el registro, " +
+                                "Revisalo y Intentalo otra vez", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     private void limpiar() {
         etname.setText("");
