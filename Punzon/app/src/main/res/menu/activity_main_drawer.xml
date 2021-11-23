@@ -24,5 +24,9 @@
             android:id="@+id/Mi_cuenta"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Mi Cuenta" />
+        <item
+            android:id="@+id/Nada"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Nada" />
     </group>
 </menu>

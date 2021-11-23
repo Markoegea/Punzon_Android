@@ -83,4 +83,10 @@
             android:id="@+id/action_Mi_cuentaIngreso_to_Main_Page"
             app:destination="@id/Main_Page" />
     </fragment>
+    <fragment
+        android:id="@+id/Nada"
+        android:name="com.titantec.punzon.Nada"
+        android:label="Nada"
+        tools:layout="@layout/activity_nada" >
+    </fragment>
 </navigation>
