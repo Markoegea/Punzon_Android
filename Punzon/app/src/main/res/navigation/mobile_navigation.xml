@@ -89,4 +89,10 @@
         android:label="Nada"
         tools:layout="@layout/activity_nada" >
     </fragment>
+    <fragment
+        android:id="@+id/Carrito"
+        android:name="com.titantec.punzon.Inventario.CarroInventario"
+        android:label="Carrito"
+        tools:layout="@layout/activity_carro_inventario" >
+    </fragment>
 </navigation>

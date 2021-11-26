@@ -89,7 +89,7 @@ public class DatosEmpleadoActivity extends Fragment {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView tvDocumento,tvNombre1,tvNombre2, tvApellido1, tvApellido2, tvTipoDocumento, tvTipoEmpleado, tvCargo, tvEspecialidad, tvNumero, tvContraseña, tvEmail;
+            TextView tvDocumento,tvNombre1, tvApellido1, tvTipoDocumento, tvTipoEmpleado, tvCargo, tvEspecialidad, tvNumero, tvContraseña, tvEmail;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
 
