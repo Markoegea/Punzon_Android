@@ -32,5 +32,21 @@
             android:id="@+id/Nada"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Nada" />
+        <item
+            android:id="@+id/Reporte_Clientes"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Reporte Clientes" />
+        <item
+            android:id="@+id/Reporte_Empleados"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="REporte Empleados" />
+        <item
+            android:id="@+id/Reporte_Productos"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Reporte Productos" />
+        <item
+            android:id="@+id/Reporte_Ventas"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Reporte Ventas" />
     </group>
 </menu>

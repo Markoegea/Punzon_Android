@@ -58,4 +58,28 @@
         android:label="Registro Productos"
         tools:layout="@layout/activity_registrar_producto" >
     </fragment>
+    <fragment
+        android:id="@+id/Reporte_Clientes"
+        android:name="com.titantec.punzon.Reportes.Clientes"
+        android:label="Reporte Clientes"
+        tools:layout="@layout/report_clientes" >
+    </fragment>
+    <fragment
+        android:id="@+id/Reporte_Empleados"
+        android:name="com.titantec.punzon.Reportes.Empleados"
+        android:label="Reporte Empleados"
+        tools:layout="@layout/report_empleados" >
+    </fragment>
+    <fragment
+        android:id="@+id/Reporte_Productos"
+        android:name="com.titantec.punzon.Reportes.Productos"
+        android:label="Reporte Productos"
+        tools:layout="@layout/report_productos" >
+    </fragment>
+    <fragment
+        android:id="@+id/Reporte_Ventas"
+        android:name="com.titantec.punzon.Reportes.Ventas"
+        android:label="Reporte Ventas"
+        tools:layout="@layout/report_ventas" >
+    </fragment>
 </navigation>
