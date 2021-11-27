@@ -15,12 +15,11 @@ public class Empleado {
     private String numero;
     private String email;
     private String contraseña;
-    private ArrayList<String> productos;
 
     public Empleado() {
     }
 
-    public Empleado(String nombre1, String nombre2, String apellido1, String apellido2, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña, ArrayList<String> productos) {
+    public Empleado(String nombre1, String nombre2, String apellido1, String apellido2, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña) {
         this.nombre1 = nombre1;
         this.nombre2 = nombre2;
         this.apellido1 = apellido1;
@@ -33,7 +32,6 @@ public class Empleado {
         this.numero = numero;
         this.email = email;
         this.contraseña = contraseña;
-        this.productos = productos;
     }
 
     public String getNombre1() {
@@ -130,13 +128,5 @@ public class Empleado {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
-    }
-
-    public ArrayList<String> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<String> productos) {
-        this.productos = productos;
     }
 }
