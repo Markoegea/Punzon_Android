@@ -106,13 +106,8 @@ public class Ventas extends Fragment {
                         NavController abrir = Navigation.findNavController(v);
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("Nombre",productosList.get(getLayoutPosition()).getNombre());
-                        bundle.putString("Id",productosList.get(getLayoutPosition()).getId());
-                        bundle.putString("Precio",productosList.get(getLayoutPosition()).getPrecio());
-                        bundle.putString("Descripcion",productosList.get(getLayoutPosition()).getDescripcion());
-                        bundle.putString("Cantidad",productosList.get(getLayoutPosition()).getCantidad());
-                        bundle.putString("Marca",productosList.get(getLayoutPosition()).getMarca());
-                        getParentFragmentManager().setFragmentResult("param1",bundle);
+
+                        /*Aqui va el modelo de datos*/
 
                         abrir.navigate(R.id.Ver_Inventario);
                     }
