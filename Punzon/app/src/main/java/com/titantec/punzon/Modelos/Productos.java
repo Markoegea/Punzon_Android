@@ -1,18 +1,18 @@
 package com.titantec.punzon.Modelos;
 
-public class Producto {
+public class Productos {
     private String nombre;
-    private long id;
-    private double precio;
+    private String id;
+    private String precio;
     private String descripcion;
-    //private int imagen;
-    private int cantidad;
+    //private String imagen;
+    private String cantidad;
     private String marca;
 
-    public Producto() {
+    public Productos() {
     }
 
-    public Producto(String nombre, long id, double precio, String descripcion, int cantidad, String marca) {
+    public Productos(String nombre, String id, String precio, String descripcion, String cantidad, String marca) {
         this.nombre = nombre;
         this.id = id;
         this.precio = precio;
@@ -29,19 +29,19 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public double getPrecio() {
+    public String getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(String precio) {
         this.precio = precio;
     }
 
@@ -53,11 +53,11 @@ public class Producto {
         this.descripcion = descripcion;
     }
 
-    public int getCantidad() {
+    public String getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(String cantidad) {
         this.cantidad = cantidad;
     }
 

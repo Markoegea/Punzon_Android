@@ -1,33 +1,28 @@
 package com.titantec.punzon;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+
 import androidx.navigation.NavController;
-import androidx.navigation.NavHostController;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.titantec.punzon.Inventario.CarroInventario;
-import com.titantec.punzon.Modelos.Producto;
+import com.titantec.punzon.Modelos.Productos;
 import com.titantec.punzon.databinding.MainPageBinding;
 
 import java.util.ArrayList;
@@ -36,9 +31,9 @@ import java.util.List;
 public class MainPage extends Fragment {
     RecyclerView rv;
     MainPageBinding mainPageBinding;
-    ProductoAdapter adapter;
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-    Button button;
+    ProductoAdapter productoAdapter;
+    List<Productos> productosList = new ArrayList<>();
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainPageBinding = MainPageBinding.inflate(inflater, container, false);
@@ -46,65 +41,63 @@ public class MainPage extends Fragment {
 
         rv = mainPageBinding.recyclerView;
         rv.setLayoutManager(new LinearLayoutManager(mainPageBinding.recyclerView.getContext()));
+
         return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Query query = firestore.collection("Producto");
-        FirestoreRecyclerOptions<Producto> firestoreRecyclerOptions
-                = new FirestoreRecyclerOptions.Builder<Producto>().setQuery(query, Producto.class).build();
-
-        adapter = new ProductoAdapter(firestoreRecyclerOptions,mainPageBinding.recyclerView.getContext());
-        adapter.notifyDataSetChanged();
-        rv.setAdapter(adapter);
-        button = view.findViewById(R.id.action_shop);
+        Query query = firestore.collection("Productos");
+        FirestoreRecyclerOptions<Productos> firestoreRO =
+                new FirestoreRecyclerOptions.Builder<Productos>().setQuery(query, Productos.class).build();
+        productoAdapter = new ProductoAdapter(firestoreRO);
+        productoAdapter.notifyDataSetChanged();
+        rv.setAdapter(productoAdapter);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        adapter.startListening();
+        productoAdapter.startListening();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        productoAdapter.stopListening();
         mainPageBinding = null;
     }
 
-    public class ProductoAdapter extends FirestoreRecyclerAdapter<Producto, ProductoAdapter.ViewHolder> {
-        private Context context;
-        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-        List<Producto> productos = new ArrayList<>();
-        public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Producto> options, Context context) {
+    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
+
+        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options){
             super(options);
-            this.context = context;
         }
 
         @Override
-        protected void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position, @NonNull Producto model) {
-            DocumentSnapshot productoDocumento = getSnapshots().getSnapshot(holder.getAdapterPosition());
-            final String id = productoDocumento.getId();
+        protected void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position, @NonNull Productos model) {
+            DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
+            final String id= documentSnapshot.getId();
             holder.txvDoc.setText(id);
             holder.txvNom.setText(model.getNombre());
-            holder.txvApe.setText(String.valueOf(model.getPrecio()));
-            Producto p = new Producto(model.getNombre(),model.getId(),model.getPrecio(),model.getDescripcion(),
-                    model.getCantidad(),model.getMarca());
-            productos.add(p);
+            holder.txvApe.setText(model.getPrecio());
+            Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
+                    model.getDescripcion(),model.getCantidad(),model.getMarca());
+            productosList.add(p);
         }
 
         @NonNull
         @Override
         public ProductoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemsfire,parent,false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemsfire, parent, false);
             return new ProductoAdapter.ViewHolder(view);
         }
 
-        public class ViewHolder extends RecyclerView.ViewHolder{
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
             TextView txvDoc,txvNom,txvApe;
-            public ViewHolder(@NonNull View itemView) {
+            public ViewHolder(@NonNull View itemView){
                 super(itemView);
                 txvDoc = itemView.findViewById(R.id.txvDoc);
                 txvNom= itemView.findViewById(R.id.txvNom);
@@ -115,12 +108,12 @@ public class MainPage extends Fragment {
                         NavController abrir = Navigation.findNavController(v);
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("Nombre",productos.get(getLayoutPosition()).getNombre());
-                        bundle.putString("Id",String.valueOf(productos.get(getLayoutPosition()).getId()));
-                        bundle.putString("Precio",String.valueOf(productos.get(getLayoutPosition()).getPrecio()));
-                        bundle.putString("Descripcion",productos.get(getLayoutPosition()).getDescripcion());
-                        bundle.putString("Cantidad",String.valueOf(productos.get(getLayoutPosition()).getCantidad()));
-                        bundle.putString("Marca",productos.get(getLayoutPosition()).getMarca());
+                        bundle.putString("Nombre",productosList.get(getLayoutPosition()).getNombre());
+                        bundle.putString("Id",productosList.get(getLayoutPosition()).getId());
+                        bundle.putString("Precio",productosList.get(getLayoutPosition()).getPrecio());
+                        bundle.putString("Descripcion",productosList.get(getLayoutPosition()).getDescripcion());
+                        bundle.putString("Cantidad",productosList.get(getLayoutPosition()).getCantidad());
+                        bundle.putString("Marca",productosList.get(getLayoutPosition()).getMarca());
                         getParentFragmentManager().setFragmentResult("param1",bundle);
 
                         abrir.navigate(R.id.Ver_Inventario);
@@ -129,5 +122,4 @@ public class MainPage extends Fragment {
             }
         }
     }
-
 }

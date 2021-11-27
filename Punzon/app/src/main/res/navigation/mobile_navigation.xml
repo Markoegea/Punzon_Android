@@ -9,80 +9,37 @@
         android:id="@+id/Main_Page"
         android:name="com.titantec.punzon.MainPage"
         android:label="Catalogo"
-        tools:layout="@layout/main_page" >
-        <action
-            android:id="@+id/action_Main_Page_to_Ver_Inventario2"
-            app:destination="@id/Ver_Inventario" />
-        <action
-            android:id="@+id/action_Main_Page_to_Registro_Clientes"
-            app:destination="@id/Registro_Clientes" />
-        <action
-            android:id="@+id/action_Main_Page_to_Ver_Empleados"
-            app:destination="@id/Ver_Empleados" />
-        <action
-            android:id="@+id/action_Main_Page_to_Registro_Empleados"
-            app:destination="@id/Registro_Empleados" />
-        <action
-            android:id="@+id/action_Main_Page_to_Mi_cuenta"
-            app:destination="@id/Mi_cuenta" />
-    </fragment>
+        tools:layout="@layout/main_page" />
     <fragment
         android:id="@+id/Registro_Clientes"
         android:name="com.titantec.punzon.Clientes.RegistroClientes"
         android:label="Registro Clientes"
-        tools:layout="@layout/activity_registro_clientes" >
-        <action
-            android:id="@+id/action_Registro_Clientes_to_Main_Page"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/activity_registro_clientes" />
     <fragment
         android:id="@+id/Ver_Empleados"
         android:name="com.titantec.punzon.Empleados.DatosEmpleadoActivity"
         android:label="Empleados"
-        tools:layout="@layout/activity_datos_empleado" >
-        <action
-            android:id="@+id/action_Ver_Empleados_to_Main_Page"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/activity_datos_empleado" />
     <fragment
         android:id="@+id/Ver_Inventario"
         android:name="com.titantec.punzon.Inventario.VerInventario"
         android:label="Inventario"
-        tools:layout="@layout/fragment_ver_inventario" >
-        <action
-            android:id="@+id/action_Ver_Inventario_to_Main_Page2"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/fragment_ver_inventario" />
     <fragment
         android:id="@+id/Registro_Empleados"
         android:name="com.titantec.punzon.Empleados.RegistrarEmpleados"
         android:label="Registro Empleados"
-        tools:layout="@layout/activity_registro_empleados" >
-        <action
-            android:id="@+id/action_Registro_Empleados_to_Main_Page"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/activity_registro_empleados" />
     <fragment
         android:id="@+id/Mi_cuenta"
         android:name="com.titantec.punzon.Cuenta.Ingreso"
         android:label="Mi cuenta"
-        tools:layout="@layout/activity_ingreso" >
-        <action
-            android:id="@+id/action_Mi_cuenta_to_Main_Page"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/activity_ingreso" />
     <fragment
         android:id="@+id/Mi_cuenta_Ingreso"
         android:name="com.titantec.punzon.Cuenta.InformacionCuenta"
         android:label="Mi cuenta2"
-        tools:layout="@layout/activity_informacion_cuenta" >
-        <action
-            android:id="@+id/action_Mi_cuentaIngreso_to_Mi_cuenta"
-            app:destination="@id/Mi_cuenta" />
-        <action
-            android:id="@+id/action_Mi_cuentaIngreso_to_Main_Page"
-            app:destination="@id/Main_Page" />
-    </fragment>
+        tools:layout="@layout/activity_informacion_cuenta" />
     <fragment
         android:id="@+id/Nada"
         android:name="com.titantec.punzon.Nada"
@@ -94,5 +51,11 @@
         android:name="com.titantec.punzon.Inventario.CarroInventario"
         android:label="Carrito"
         tools:layout="@layout/activity_carro_inventario" >
+    </fragment>
+    <fragment
+        android:id="@+id/Registro_Productos"
+        android:name="com.titantec.punzon.Inventario.RegistrarProductos"
+        android:label="Registro Productos"
+        tools:layout="@layout/activity_registrar_producto" >
     </fragment>
 </navigation>
