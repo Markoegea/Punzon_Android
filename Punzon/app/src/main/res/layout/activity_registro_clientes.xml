@@ -25,7 +25,7 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="107dp"
+            android:layout_height="178dp"
             tools:src="@tools:sample/avatars" />
 
         <EditText
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="82dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="46dp"
             android:layout_marginBottom="4dp"
             android:autofillHints="@string/prompt_email"
@@ -58,16 +58,16 @@
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="82dp"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/txtIdType2"
                 android:layout_width="wrap_content"
                 android:layout_height="52dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginBottom="0dp"
                 android:text="@string/txtIdType"
                 android:textAlignment="viewStart"
                 android:textSize="16sp" />
@@ -76,7 +76,7 @@
                 android:id="@+id/spid_cliente"
                 android:layout_width="wrap_content"
                 android:layout_height="65dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="0dp"
                 android:entries="@array/id_type_array"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
@@ -85,8 +85,8 @@
             android:id="@+id/idCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="31dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:autofillHints="@string/prompt_email"
             android:hint="@string/id"
             android:inputType="text"
@@ -95,11 +95,20 @@
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
+            android:id="@+id/EdtTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Telefono"
+            android:inputType="number"
+            android:minHeight="48dp" />
+
+        <EditText
             android:id="@+id/userCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:autofillHints="@string/prompt_email"
             android:hint="@string/nameUsuario"
             android:inputType="textEmailAddress"
@@ -111,8 +120,8 @@
             android:id="@+id/passwordCliente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
             android:autofillHints="@string/prompt_password"
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in_short"
@@ -132,15 +141,11 @@
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/btnRegCliente"
+            android:id="@+id/BtnRegCliente"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_gravity="start"
-            android:backgroundTint="#3949AB"
-            android:enabled="false"
-            android:text="@string/action_register_short"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white" />
+            android:layout_height="wrap_content"
+            android:text="Registrarse" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

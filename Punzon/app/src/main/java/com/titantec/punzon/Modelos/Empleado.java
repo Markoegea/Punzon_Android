@@ -16,7 +16,18 @@ public class Empleado {
     private String email;
     private String contraseña;
 
+    public Empleado() {
+    }
+
     public Empleado(String tipoEmpleado, String tipoDocumento, String documento, String cargo, String especialidad, String numero, String email, String contraseña) {
+        this.tipoDocumento = tipoDocumento;
+        this.documento = documento;
+        this.tipoEmpleado = tipoEmpleado;
+        this.cargo = cargo;
+        this.especialidad = especialidad;
+        this.numero = numero;
+        this.email = email;
+        this.contraseña = contraseña;
     }
 
     public Empleado(String nombre1, String nombre2, String apellido1, String apellido2, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña) {
