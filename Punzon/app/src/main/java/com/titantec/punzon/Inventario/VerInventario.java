@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.titantec.punzon.R;
 import com.titantec.punzon.databinding.FragmentVerInventarioBinding;
 
@@ -38,24 +39,18 @@ public class VerInventario extends Fragment {
                              Bundle savedInstanceState) {
         fragmentVerInventarioBinding = fragmentVerInventarioBinding.inflate(inflater, container, false);
         View root = fragmentVerInventarioBinding.getRoot();
-
-        return root;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
         txvnombre=fragmentVerInventarioBinding.TvNombre;
         txvprecio=fragmentVerInventarioBinding.TvPrecio;
         txvdescripcion=fragmentVerInventarioBinding.TvDescripcion;
         txvcantidad=fragmentVerInventarioBinding.TvCantidad;
         txvmarca=fragmentVerInventarioBinding.TvMarca;
         imgproducto=fragmentVerInventarioBinding.ImgProducto;
+        return root;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         getParentFragmentManager().setFragmentResultListener("param1", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -64,8 +59,14 @@ public class VerInventario extends Fragment {
                 txvdescripcion.setText(result.getString("Descripcion"));
                 txvcantidad.setText(result.getString("Cantidad"));
                 txvmarca.setText(result.getString("Marca"));
+                Glide.with(view.getContext()).load(result.getString("Imagen")).into(imgproducto);
             }
         });
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override

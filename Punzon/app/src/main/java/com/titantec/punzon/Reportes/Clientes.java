@@ -81,7 +81,7 @@ public class Clientes extends Fragment {
             holder.txvNom.setText(model.getNombre());
             holder.txvApe.setText(model.getPrecio());
             Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
-                    model.getDescripcion(),model.getCantidad(),model.getMarca());
+                    model.getDescripcion(), model.getImagen(), model.getCantidad(),model.getMarca());
             productosList.add(p);
         }
 

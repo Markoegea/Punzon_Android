@@ -18,7 +18,7 @@ public class CarroInventario extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         activityCarroInventarioBinding = activityCarroInventarioBinding.inflate(inflater, container, false);
-        View root = activityCarroInventarioBinding.getRoot();;
+        View root = activityCarroInventarioBinding.getRoot();
         return root;
     }
 

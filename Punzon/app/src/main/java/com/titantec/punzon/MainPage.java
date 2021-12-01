@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
@@ -51,7 +53,7 @@ public class MainPage extends Fragment {
         Query query = firestore.collection("Productos");
         FirestoreRecyclerOptions<Productos> firestoreRO =
                 new FirestoreRecyclerOptions.Builder<Productos>().setQuery(query, Productos.class).build();
-        productoAdapter = new ProductoAdapter(firestoreRO);
+        productoAdapter = new ProductoAdapter(firestoreRO, view);
         productoAdapter.notifyDataSetChanged();
         rv.setAdapter(productoAdapter);
     }
@@ -71,19 +73,30 @@ public class MainPage extends Fragment {
 
     public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
     private List<Productos> listaCarro;
-        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options){
+
+
+        private View view;
+        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options, View v){
             super(options);
+            this.view = v;
             listaCarro = new ArrayList<>();
+
         }
 
         @Override
         protected void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position, @NonNull Productos model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
             final String id= documentSnapshot.getId();
+
             holder.txvProducto.setText(model.getNombre());
             holder.txvCosto.setText(model.getPrecio());
+
+
+
+            Glide.with(view.getContext()).load(model.getImagen()).into(holder.imgProduct);
+
             Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
-                    model.getDescripcion(),model.getCantidad(),model.getMarca());
+                    model.getDescripcion(),model.getImagen(),model.getCantidad(),model.getMarca());
             productosList.add(p);
         }
 
@@ -98,6 +111,7 @@ public class MainPage extends Fragment {
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView txvProducto,txvCosto;
             Button btnAgregar;
+            ImageView imgProduct;
 
 
 
@@ -106,8 +120,12 @@ public class MainPage extends Fragment {
                 txvProducto = itemView.findViewById(R.id.txvProducto);
                 txvCosto= itemView.findViewById(R.id.txvApe);
                 btnAgregar = itemView.findViewById(R.id.btnAgregar);
+                imgProduct = itemView.findViewById(R.id.imgProduct);
+
 
                 btnAgregar.setOnClickListener(agregarProductoClickListener);
+
+
 
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -121,6 +139,7 @@ public class MainPage extends Fragment {
                         bundle.putString("Descripcion",productosList.get(getLayoutPosition()).getDescripcion());
                         bundle.putString("Cantidad",productosList.get(getLayoutPosition()).getCantidad());
                         bundle.putString("Marca",productosList.get(getLayoutPosition()).getMarca());
+                        bundle.putString("Imagen",productosList.get(getLayoutPosition()).getImagen());
                         getParentFragmentManager().setFragmentResult("param1",bundle);
 
                         abrir.navigate(R.id.Ver_Inventario);

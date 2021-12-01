@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/Mariani/Dropbox/Curso TIC/Ciclo4/Ciclo_4/Punzon/app/src/main/res/layout/activity_carro_inventario.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Mariani/Dropbox/Curso TIC/Ciclo4/Ciclo_4/Punzon/app/src/main/res/layout/activity_datos_empleado.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Mariani/Dropbox/Curso TIC/Ciclo4/Ciclo_4/Punzon/app/src/main/res/layout/activity_informacion_cuenta.xml" value="0.20416666666666666" />
@@ -21,6 +22,50 @@
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Punzon/app/src/main/res/layout/activity_empleado_especial.xml" value="0.6" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Punzon/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Usuario/AndroidStudioProjects/Punzon/app/src/main/res/layout/activity_registro_empleados.xml" value="0.5859296482412061" />
+=======
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/activity_datos_empleado.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/activity_main.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/activity_registro_clientes.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/activity_registro_empleados.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/activity_shoppingcar.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/fragment_ver_inventario.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/itemsfire.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/main_page.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/menu_main_app.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/nav_header_main.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/report_clientes.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/report_empleados.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/report_productos.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/report_ventas.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/spinner_item.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/layout/vista_empleado.xml" value="0.425" />
+        <entry key="..\:/Users/Andre/OneDrive/Documents/GitHub/Ciclo_4/Punzon/app/src/main/res/menu/activity_main_drawer.xml" value="0.425" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2203125" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/drawable/side_nav_bar.xml" value="0.2203125" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_carro_inventario.xml" value="0.12545289855072464" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_datos_empleado.xml" value="0.11503623188405797" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_informacion_cuenta.xml" value="0.2" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_ingreso.xml" value="0.25" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_main_drawer.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_nada.xml" value="0.14356884057971014" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_registrar_producto.xml" value="0.18" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_registro_clientes.xml" value="0.22" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_registro_empleados.xml" value="0.21" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/activity_ver_inventario.xml" value="0.11503623188405797" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/carrito.xml" value="0.12545289855072464" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/contenido_main.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/fragment_ver_inventario.xml" value="0.1" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/itemsfire.xml" value="0.18" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/main_page.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/menu_main_app.xml" value="0.18" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/mobile_navigation.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/nav_header_main.xml" value="0.22" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/spinner_item.xml" value="0.1082427536231884" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/layout/vista_empleado.xml" value="0.15" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/MarcoEgea/Desktop/MISIONTIC/Ciclo_4/Punzon/app/src/main/res/menu/carrito.xml" value="0.2" />
+>>>>>>> f3623416de35b1905baa813d199781b9455fd1fc
       </map>
     </option>
   </component>
