@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.juanlabrador.badgecounter.BadgeCounter;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtNombre,txtCorreo;
     FirebaseAuth auth = FirebaseAuth.getInstance();
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    private Menu menu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        this.menu = menu;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.carrito, menu);
+        actualizarNotificacion(0);
         return true;
     }
 
@@ -100,5 +104,14 @@ public class MainActivity extends AppCompatActivity {
         }
         txtNombre.setText("No te conozco, por favor registrate");
         txtCorreo.setText("");
+    }
+
+    public void actualizarNotificacion (int totalProductos){
+
+        BadgeCounter.update(this,
+                menu.findItem(R.id.action_shop),
+                R.drawable.shopping_car,
+                BadgeCounter.BadgeColor.BLACK,
+                "+"+ totalProductos);
     }
 }

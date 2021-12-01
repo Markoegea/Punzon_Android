@@ -70,18 +70,18 @@ public class MainPage extends Fragment {
     }
 
     public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
-
+    private List<Productos> listaCarro;
         public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options){
             super(options);
+            listaCarro = new ArrayList<>();
         }
 
         @Override
         protected void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position, @NonNull Productos model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
             final String id= documentSnapshot.getId();
-            holder.txvDoc.setText(id);
-            holder.txvNom.setText(model.getNombre());
-            holder.txvApe.setText(model.getPrecio());
+            holder.txvProducto.setText(model.getNombre());
+            holder.txvCosto.setText(model.getPrecio());
             Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
                     model.getDescripcion(),model.getCantidad(),model.getMarca());
             productosList.add(p);
@@ -90,18 +90,25 @@ public class MainPage extends Fragment {
         @NonNull
         @Override
         public ProductoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.itemsfire, parent, false);
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_producto, parent, false);
             return new ProductoAdapter.ViewHolder(view);
         }
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView txvDoc,txvNom,txvApe;
+            TextView txvProducto,txvCosto;
+            Button btnAgregar;
+
+
+
             public ViewHolder(@NonNull View itemView){
                 super(itemView);
-                txvDoc = itemView.findViewById(R.id.txvDoc);
-                txvNom= itemView.findViewById(R.id.txvNom);
-                txvApe = itemView.findViewById(R.id.txvApe);
+                txvProducto = itemView.findViewById(R.id.txvProducto);
+                txvCosto= itemView.findViewById(R.id.txvApe);
+                btnAgregar = itemView.findViewById(R.id.btnAgregar);
+
+                btnAgregar.setOnClickListener(agregarProductoClickListener);
+
                 itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -120,6 +127,12 @@ public class MainPage extends Fragment {
                     }
                 });
             }
+
+            private View.OnClickListener agregarProductoClickListener = view -> {
+                listaCarro.add(productosList.get(getBindingAdapterPosition()));
+                MainActivity actividadCatalogo = (MainActivity) MainPage.this.getActivity();
+                actividadCatalogo.actualizarNotificacion(listaCarro.size());
+            };
         }
     }
 }
