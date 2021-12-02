@@ -12,12 +12,13 @@ public class Clientes {
     private String email;
     private String contraseña;
     private String direccion;
+    private String imagen;
     private List<String> carrito;
 
     public Clientes() {
     }
 
-    public Clientes(String nombre, String apellido, String tipoDocumento, String documento, String numero, String email, String contraseña, String direccion, List<String> carrito) {
+    public Clientes(String nombre, String apellido, String tipoDocumento, String documento, String numero, String email, String contraseña, String direccion, String imagen, List<String> carrito) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
@@ -26,6 +27,7 @@ public class Clientes {
         this.email = email;
         this.contraseña = contraseña;
         this.direccion = direccion;
+        this.imagen = imagen;
         this.carrito = carrito;
     }
 
@@ -91,6 +93,14 @@ public class Clientes {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public List<String> getCarrito() {

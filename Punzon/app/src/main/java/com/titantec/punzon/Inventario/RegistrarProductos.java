@@ -147,6 +147,7 @@ public class RegistrarProductos extends Fragment {
                                 } else {
                                     Toast.makeText(v.getContext(), "Fallo en el registro, " +
                                             "Revisalo y Intentalo otra vez", Toast.LENGTH_SHORT).show();
+                                    progressDialog.dismiss();
                                 }
                             }
                         });

@@ -80,10 +80,10 @@ public class Empleados extends Fragment {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
             final String id= documentSnapshot.getId();
             holder.txvDoc.setText(id);
-            holder.txvNom.setText(model.getNombre1());
-            holder.txvApe.setText(model.getApellido1());
-            Empleado p = new Empleado(model.getTipoEmpleado(),model.getTipoDocumento(), model.getDocumento(),
-                    model.getCargo(),model.getEspecialidad(),model.getNumero(),model.getEmail(), model.getContraseña());
+            holder.txvNom.setText(model.getNombre());
+            holder.txvApe.setText(model.getApellido());
+            Empleado p = new Empleado(model.getNombre(), model.getApellido(), model.getTipoDocumento(),
+                    model.getDocumento(), model.getTipoEmpleado(), model.getCargo(), model.getEspecialidad(), model.getNumero(), model.getEmail(), model.getContraseña(), model.getImagen());
             EmpleadoList.add(p);
         }
 
@@ -107,12 +107,12 @@ public class Empleados extends Fragment {
                         NavController abrir = Navigation.findNavController(v);
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("Apellido",EmpleadoList.get(getLayoutPosition()).getApellido1());
+                        bundle.putString("Apellido",EmpleadoList.get(getLayoutPosition()).getApellido());
                         bundle.putString("Cargo",EmpleadoList.get(getLayoutPosition()).getCargo());
                         bundle.putString("Contrasena",EmpleadoList.get(getLayoutPosition()).getContraseña());
                         bundle.putString("Email",EmpleadoList.get(getLayoutPosition()).getEmail());
                         bundle.putString("Especialidad",EmpleadoList.get(getLayoutPosition()).getEspecialidad());
-                        bundle.putString("Nombre",EmpleadoList.get(getLayoutPosition()).getNombre1());
+                        bundle.putString("Nombre",EmpleadoList.get(getLayoutPosition()).getNombre());
                         bundle.putString("Numero",EmpleadoList.get(getLayoutPosition()).getNumero());
                         bundle.putString("Numero de documento",EmpleadoList.get(getLayoutPosition()).getDocumento());
                         bundle.putString("Tipo de documento",EmpleadoList.get(getLayoutPosition()).getTipoDocumento());

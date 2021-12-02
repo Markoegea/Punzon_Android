@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,6 +36,8 @@ public class InformacionCuenta extends Fragment {
 
     TextView tvDocumento,tvNombre1, tvApellido1, tvTipoDocumento, tvTipoEmpleado, tvCargo, tvEspecialidad, tvNumero, tvContraseña, tvEmail;
     Button btnSalir;
+    ImageView ivCuenta;
+
     public InformacionCuenta() {
     }
 
@@ -54,6 +58,8 @@ public class InformacionCuenta extends Fragment {
         tvContraseña= activityInformacionCuentaBinding.txvPassword;
         btnSalir=activityInformacionCuentaBinding.BtnSalir;
 
+        ivCuenta=activityInformacionCuentaBinding.ImagenCuenta;
+
         return root;
     }
 
@@ -62,11 +68,11 @@ public class InformacionCuenta extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         if(auth.getCurrentUser()!=null){
             FirebaseUser user = auth.getCurrentUser();
-            firestore.collection("Empleados").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            firestore.collection("Empleado").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if (documentSnapshot.exists()){
-                        tvDocumento.setText(documentSnapshot.getString("numero_de_documento"));
+                        tvDocumento.setText(documentSnapshot.getString("documento"));
                         tvNombre1.setText(documentSnapshot.getString("nombre"));
                         tvApellido1.setText(documentSnapshot.getString("apellido"));
                         tvTipoDocumento.setText(documentSnapshot.getString("tipoDocumento"));
@@ -76,6 +82,8 @@ public class InformacionCuenta extends Fragment {
                         tvNumero.setText(documentSnapshot.getString("numero"));
                         tvContraseña.setText(documentSnapshot.getString("contraseña"));
                         tvEmail.setText(documentSnapshot.getString("email"));
+                        Glide.with(view.getContext()).load(documentSnapshot.getString("imagen")).into(ivCuenta);
+
                     }
                 }
             });

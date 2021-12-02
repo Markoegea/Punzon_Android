@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         });
         if(auth.getCurrentUser()!=null){
             FirebaseUser user = auth.getCurrentUser();
-            firestore.collection("Empleados").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            firestore.collection("Empleado").document(user.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
                     if (documentSnapshot.exists()){

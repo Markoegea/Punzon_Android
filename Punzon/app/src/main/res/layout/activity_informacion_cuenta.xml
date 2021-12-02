@@ -43,11 +43,17 @@
                     android:text="@string/id"
                     android:textSize="15sp" />
 
+                <ImageView
+                    android:id="@+id/ImagenCuenta"
+                    android:layout_width="match_parent"
+                    android:layout_height="214dp"
+                    tools:src="@tools:sample/avatars" />
+
                 <TextView
                     android:id="@+id/txvNom1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/name"
                     android:textSize="15sp" />
 
@@ -55,7 +61,7 @@
                     android:id="@+id/txvApe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/last_name"
                     android:textSize="15sp" />
 
@@ -63,7 +69,7 @@
                     android:id="@+id/txvNumero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/numero"
                     android:textSize="15sp" />
 
@@ -71,7 +77,7 @@
                     android:id="@+id/txvTipoDoccumento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/txtIdType"
                     android:textSize="15sp" />
 
@@ -79,7 +85,7 @@
                     android:id="@+id/txvTipoEmpleado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/empleado_type"
                     android:textSize="15sp" />
 
@@ -87,7 +93,7 @@
                     android:id="@+id/txvCargo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/txtCargo"
                     android:textSize="15sp" />
 
@@ -95,7 +101,7 @@
                     android:id="@+id/txvEspecialidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/txtEspecialidad"
                     android:textSize="15sp" />
 
@@ -103,7 +109,7 @@
                     android:id="@+id/txvUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/nameUsuario"
                     android:textSize="15sp" />
 
@@ -111,7 +117,7 @@
                     android:id="@+id/txvPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="20dp"
+                    android:layout_margin="5dp"
                     android:text="@string/prompt_password"
                     android:textSize="15sp" />
 

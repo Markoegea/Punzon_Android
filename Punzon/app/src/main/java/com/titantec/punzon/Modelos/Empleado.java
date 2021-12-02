@@ -3,10 +3,8 @@ package com.titantec.punzon.Modelos;
 import java.util.ArrayList;
 
 public class Empleado {
-    private String nombre1;
-    private String nombre2;
-    private String apellido1;
-    private String apellido2;
+    private String nombre;
+    private String apellido;
     private String tipoDocumento;
     private String documento;
     private String tipoEmpleado;
@@ -15,11 +13,14 @@ public class Empleado {
     private String numero;
     private String email;
     private String contraseña;
+    private String imagen;
 
     public Empleado() {
     }
 
-    public Empleado(String tipoEmpleado, String tipoDocumento, String documento, String cargo, String especialidad, String numero, String email, String contraseña) {
+    public Empleado(String nombre, String apellido, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña, String imagen) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
         this.documento = documento;
         this.tipoEmpleado = tipoEmpleado;
@@ -28,53 +29,23 @@ public class Empleado {
         this.numero = numero;
         this.email = email;
         this.contraseña = contraseña;
+        this.imagen = imagen;
     }
 
-    public Empleado(String nombre1, String nombre2, String apellido1, String apellido2, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña) {
-        this.nombre1 = nombre1;
-        this.nombre2 = nombre2;
-        this.apellido1 = apellido1;
-        this.apellido2 = apellido2;
-        this.tipoDocumento = tipoDocumento;
-        this.documento = documento;
-        this.tipoEmpleado = tipoEmpleado;
-        this.cargo = cargo;
-        this.especialidad = especialidad;
-        this.numero = numero;
-        this.email = email;
-        this.contraseña = contraseña;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getNombre1() {
-        return nombre1;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
+    public String getApellido() {
+        return apellido;
     }
 
-    public String getNombre2() {
-        return nombre2;
-    }
-
-    public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
-    }
-
-    public String getApellido1() {
-        return apellido1;
-    }
-
-    public void setApellido1(String apellido1) {
-        this.apellido1 = apellido1;
-    }
-
-    public String getApellido2() {
-        return apellido2;
-    }
-
-    public void setApellido2(String apellido2) {
-        this.apellido2 = apellido2;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getTipoDocumento() {
@@ -139,5 +110,13 @@ public class Empleado {
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

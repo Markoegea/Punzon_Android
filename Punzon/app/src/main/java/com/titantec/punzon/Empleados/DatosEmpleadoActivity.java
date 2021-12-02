@@ -4,13 +4,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -35,14 +38,19 @@ public class DatosEmpleadoActivity extends Fragment {
         rv = activityDatosEmpleadoBinding.rvEmpleados;
         rv.setLayoutManager(new LinearLayoutManager(activityDatosEmpleadoBinding.rvEmpleados.getContext()));
 
-        Query query = firestore.collection("Empleados");
-        FirestoreRecyclerOptions<Empleado> firestoreRO =
-                new FirestoreRecyclerOptions.Builder<Empleado>().setQuery(query,Empleado.class).build();
-        adapter= new EmpleadoAdapter(firestoreRO);
-        adapter.notifyDataSetChanged();
-        rv.setAdapter(adapter);
 
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Query query = firestore.collection("Empleado");
+        FirestoreRecyclerOptions<Empleado> firestoreRO =
+                new FirestoreRecyclerOptions.Builder<Empleado>().setQuery(query,Empleado.class).build();
+        adapter= new EmpleadoAdapter(firestoreRO,view);
+        adapter.notifyDataSetChanged();
+        rv.setAdapter(adapter);
     }
 
     @Override
@@ -59,9 +67,10 @@ public class DatosEmpleadoActivity extends Fragment {
 
     public class EmpleadoAdapter extends FirestoreRecyclerAdapter<Empleado, EmpleadoAdapter.ViewHolder> {
         FirebaseFirestore fireStore= FirebaseFirestore.getInstance();
-
-        public EmpleadoAdapter(@NonNull FirestoreRecyclerOptions<Empleado> options) {
+        private View v;
+        public EmpleadoAdapter(@NonNull FirestoreRecyclerOptions<Empleado> options, View view) {
             super(options);
+            this.v = view;
         }
 
         @Override
@@ -70,8 +79,8 @@ public class DatosEmpleadoActivity extends Fragment {
             final String id= empleadoDocumento.getId();
 
             holder.tvDocumento.setText(id);
-            holder.tvNombre1.setText(model.getNombre1());
-            holder.tvApellido1.setText(model.getApellido1());
+            holder.tvNombre.setText(model.getNombre());
+            holder.tvApellido.setText(model.getApellido());
             holder.tvTipoDocumento.setText(model.getTipoDocumento());
             holder.tvTipoEmpleado.setText(model.getTipoEmpleado());
             holder.tvCargo.setText(model.getCargo());
@@ -79,6 +88,7 @@ public class DatosEmpleadoActivity extends Fragment {
             holder.tvNumero.setText(model.getNumero());
             holder.tvContraseña.setText(model.getContraseña());
             holder.tvEmail.setText(model.getEmail());
+            Glide.with(v.getContext()).load(model.getImagen()).into(holder.iV);
         }
 
         @NonNull
@@ -89,13 +99,13 @@ public class DatosEmpleadoActivity extends Fragment {
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView tvDocumento,tvNombre1, tvApellido1, tvTipoDocumento, tvTipoEmpleado, tvCargo, tvEspecialidad, tvNumero, tvContraseña, tvEmail;
+            TextView tvDocumento,tvNombre, tvApellido, tvTipoDocumento, tvTipoEmpleado, tvCargo, tvEspecialidad, tvNumero, tvContraseña, tvEmail;
+            ImageView iV;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-
                 tvDocumento= itemView.findViewById(R.id.txvDoc);
-                tvNombre1= itemView.findViewById(R.id.txvNom1);
-                tvApellido1= itemView.findViewById(R.id.txvApe);
+                tvNombre= itemView.findViewById(R.id.txvNom1);
+                tvApellido= itemView.findViewById(R.id.txvApe);
                 tvTipoDocumento= itemView.findViewById(R.id.txvTipoDoccumento);
                 tvTipoEmpleado= itemView.findViewById(R.id.txvTipoEmpleado);
                 tvCargo= itemView.findViewById(R.id.txvCargo);
@@ -103,7 +113,7 @@ public class DatosEmpleadoActivity extends Fragment {
                 tvNumero= itemView.findViewById(R.id.txvNumero);
                 tvEmail=itemView.findViewById(R.id.txvUsuario);
                 tvContraseña= itemView.findViewById(R.id.txvContraseña);
-
+                iV = itemView.findViewById(R.id.ImagenEmpleado);
             }
         }
     }
