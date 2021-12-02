@@ -21,7 +21,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -43,27 +43,27 @@
                 android:textColor="#2A91DF"
                 android:textSize="15sp" />
 
-            <Button
-                android:id="@+id/btnAgregar"
-                android:layout_width="132dp"
-                android:layout_height="wrap_content"
-                android:text="Agregar Producto"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textSize="14sp"
-                android:translationX="40dp" />
-
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/imgProduct"
-            android:layout_width="13dp"
-            android:layout_height="wrap_content"
+            android:layout_width="85dp"
+            android:layout_height="180dp"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/avatars" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Producto"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:translationX="40dp" />
 
     <View
         android:layout_width="match_parent"
