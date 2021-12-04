@@ -19,7 +19,6 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
-import com.titantec.punzon.Modelos.Productos;
 import com.titantec.punzon.R;
 import com.titantec.punzon.databinding.MainPageBinding;
 
@@ -30,8 +29,8 @@ public class Clientes extends Fragment {
     RecyclerView rv;
     MainPageBinding mainPageBinding;
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-    ProductoAdapter productoAdapter;
-    List<Productos> productosList = new ArrayList<>();
+    ClienteAdapter ClienteAdapter;
+    List<com.titantec.punzon.Modelos.Clientes> clientesList = new ArrayList<>();
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainPageBinding = MainPageBinding.inflate(inflater, container, false);
@@ -46,43 +45,48 @@ public class Clientes extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Query query = firestore.collection("Productos");
-        FirestoreRecyclerOptions<Productos> firestoreRO =
-                new FirestoreRecyclerOptions.Builder<Productos>().setQuery(query, Productos.class).build();
-        productoAdapter = new ProductoAdapter(firestoreRO);
-        productoAdapter.notifyDataSetChanged();
-        rv.setAdapter(productoAdapter);
+        Query query = firestore.collection("Clientes");
+        FirestoreRecyclerOptions<com.titantec.punzon.Modelos.Clientes> firestoreRO =
+                new FirestoreRecyclerOptions.Builder<com.titantec.punzon.Modelos.Clientes>().setQuery(query, com.titantec.punzon.Modelos.Clientes.class).build();
+        ClienteAdapter = new ClienteAdapter(firestoreRO);
+        ClienteAdapter.notifyDataSetChanged();
+        rv.setAdapter(ClienteAdapter);
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        productoAdapter.startListening();
+        ClienteAdapter.startListening();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        productoAdapter.stopListening();
+        ClienteAdapter.stopListening();
         mainPageBinding = null;
     }
 
-    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
+    public class ClienteAdapter extends FirestoreRecyclerAdapter<Clientes, ClienteAdapter.ViewHolder>{
 
-        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options){
+        public ClienteAdapter (@NonNull FirestoreRecyclerOptions<com.titantec.punzon.Modelos.Clientes> options){
             super(options);
         }
 
         @Override
-        protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Productos model) {
+        protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Clientes model) {
+
+        }
+
+        @Override
+        protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull com.titantec.punzon.Modelos.Clientes model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
             final String id= documentSnapshot.getId();
             holder.txvDoc.setText(id);
             holder.txvNom.setText(model.getNombre());
-            holder.txvApe.setText(model.getPrecio());
-            Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
-                    model.getDescripcion(), model.getImagen(), model.getCantidad(),model.getMarca());
-            productosList.add(p);
+            holder.txvApe.setText(model.getApellido());
+            Clientes c = new com.titantec.punzon.Modelos.Clientes(model.getNombre(), model.getApellido(), model.getTipoDocumento(),
+                    model.getDocumento(), model.getNumero(), model.getEmail(), model.getContraseña(), model.getDireccion(), model.getImagen(), model.getCarrito());
+            clientesList.add(c);
         }
 
         @NonNull
@@ -107,8 +111,15 @@ public class Clientes extends Fragment {
 
                         Bundle bundle = new Bundle();
 
-                        /*Aqui va el modelo de datos*/
-
+                        bundle.putString("Apellido",clientesList.get(getLayoutPosition()).getApellido());
+                        bundle.putString("Contrasena",clientesList.get(getLayoutPosition()).getContraseña());
+                        bundle.putString("Email",clientesList.get(getLayoutPosition()).getEmail());
+                        bundle.putString("Nombre",clientesList.get(getLayoutPosition()).getNombre());
+                        bundle.putString("Numero",clientesList.get(getLayoutPosition()).getNumero());
+                        bundle.putString("Numero de documento",clientesList.get(getLayoutPosition()).getDocumento());
+                        bundle.putString("Direccion",clientesList.get(getLayoutPosition()).getDocumento());
+                        bundle.putString("Imagen",clientesList.get(getLayoutPosition()).getDocumento());
+                        bundle.putString("Tipo de documento",clientesList.get(getLayoutPosition()).getTipoDocumento());
                         getParentFragmentManager().setFragmentResult("param1",bundle);
 
                         abrir.navigate(R.id.Ver_Inventario);

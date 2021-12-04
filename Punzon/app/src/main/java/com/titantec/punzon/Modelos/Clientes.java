@@ -2,7 +2,7 @@ package com.titantec.punzon.Modelos;
 
 import java.util.List;
 
-public class Clientes {
+public class Clientes extends com.titantec.punzon.Reportes.Clientes {
 
     private String nombre;
     private String apellido;
@@ -18,7 +18,7 @@ public class Clientes {
     public Clientes() {
     }
 
-    public Clientes(String nombre, String apellido, String tipoDocumento, String documento, String numero, String email, String contraseña, String direccion, String imagen, List<String> carrito) {
+    public Clientes(String nombre, String apellido, String tipoDocumento, String documento, String numero, String email, String contraseña, String direccion, String imagen, List carrito) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
