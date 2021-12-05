@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="20dp">
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginRight="40dp"
+    android:orientation="vertical">
 
     <View
         android:id="@+id/view2"
@@ -17,11 +18,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="619dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical">
@@ -29,87 +30,88 @@
             <TextView
                 android:id="@+id/txvDoc"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/id"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/ImagenEmpleado"
                 android:layout_width="match_parent"
-                android:layout_height="177dp"
+                android:layout_height="215dp"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/txvNom1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/name"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvApe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:gravity="center_vertical"
                 android:text="@string/last_name"
                 android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txvNumero"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/numero"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvTipoDoccumento"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/txtIdType"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvTipoEmpleado"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/empleado_type"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvCargo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/txtCargo"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvEspecialidad"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/txtEspecialidad"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvUsuario"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/nameUsuario"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/txvContraseña"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
                 android:text="@string/prompt_password"
-                android:textSize="15sp" />
+                android:textSize="16sp" />
 
 
         </LinearLayout>
@@ -119,7 +121,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/black"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:background="@color/black" />
 
 </LinearLayout>
