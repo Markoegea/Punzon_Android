@@ -66,15 +66,10 @@ public class Clientes extends Fragment {
         mainPageBinding = null;
     }
 
-    public class ClienteAdapter extends FirestoreRecyclerAdapter<Clientes, ClienteAdapter.ViewHolder>{
+    public class ClienteAdapter extends FirestoreRecyclerAdapter<com.titantec.punzon.Modelos.Clientes, ClienteAdapter.ViewHolder>{
 
         public ClienteAdapter (@NonNull FirestoreRecyclerOptions<com.titantec.punzon.Modelos.Clientes> options){
             super(options);
-        }
-
-        @Override
-        protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Clientes model) {
-
         }
 
         @Override
@@ -84,7 +79,7 @@ public class Clientes extends Fragment {
             holder.txvDoc.setText(id);
             holder.txvNom.setText(model.getNombre());
             holder.txvApe.setText(model.getApellido());
-            Clientes c = new com.titantec.punzon.Modelos.Clientes(model.getNombre(), model.getApellido(), model.getTipoDocumento(),
+            com.titantec.punzon.Modelos.Clientes c = new com.titantec.punzon.Modelos.Clientes(model.getNombre(), model.getApellido(), model.getTipoDocumento(),
                     model.getDocumento(), model.getNumero(), model.getEmail(), model.getContraseña(), model.getDireccion(), model.getImagen(), model.getCarrito());
             clientesList.add(c);
         }
