@@ -1,127 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="30dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginRight="40dp"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    >
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/black" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="619dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="@drawable/side_nav_bar"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageEmpleado"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#B65538"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop"/>
+
 
         <LinearLayout
+            android:id="@+id/llNom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="30dp"
+            android:layout_below="@+id/imageEmpleado"
+            android:baselineAligned="false"
+            android:background="#1A6E6E6E"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txvDoc"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/id"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/ImagenEmpleado"
-                android:layout_width="match_parent"
-                android:layout_height="215dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:id="@+id/tvNom"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/name"
+                android:textColor="#000"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/txvNom1"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="@string/name"
-                android:textSize="16sp" />
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llApe"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llNom"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvApe"
+                android:text="@string/last_name"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:id="@+id/txvApe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
                 android:text="@string/last_name"
-                android:textSize="15sp" />
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llTipoDocumento"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llApe"
+            android:baselineAligned="false"
+            android:background="#1A6E6E6E"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txvNumero"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/numero"
-                android:textSize="16sp" />
+                android:id="@+id/tvTipoDoccumento"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Tipo Doc"
+                android:textSize="20dp"
+                android:textColor="#000"
+                />
 
             <TextView
                 android:id="@+id/txvTipoDoccumento"
+                android:text="Tipo Doc"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/txtIdType"
-                android:textSize="16sp" />
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llDoc"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llTipoDocumento"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/txvTipoEmpleado"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/empleado_type"
-                android:textSize="16sp" />
+                android:id="@+id/tvDoc"
+                android:text="@string/id"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="5dp" />
 
             <TextView
-                android:id="@+id/txvCargo"
+                android:id="@+id/txvDoc"
+                android:text="@string/id"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/txtCargo"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txvEspecialidad"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/txtEspecialidad"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txvUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/nameUsuario"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/txvContraseña"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center_vertical"
-                android:text="@string/prompt_password"
-                android:textSize="16sp" />
-
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp" />
 
         </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llNumero"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llDoc"
+            android:background="#1A6E6E6E"
+            android:orientation="horizontal">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/black" />
+            <TextView
+                android:id="@+id/tvNumero"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="N Teléfono"
+                android:textSize="20dp"
+                android:textColor="#000" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/txvNumero"
+                android:text="N Teléfono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llTipoEmpleado"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llNumero"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTipoEmpleado"
+                android:text="Tipo Emp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/txvTipoEmpleado"
+                android:text="T Empleados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCargo"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llTipoEmpleado"
+            android:background="#1A6E6E6E"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvCargo"
+                android:text="@string/txtCargo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/txvCargo"
+                android:text="@string/txtCargo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llEspecialidad"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llCargo"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvEspecialidad"
+                android:text="@string/txtEspecialidad"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/txvEspecialidad"
+                android:text="@string/txtEspecialidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llusuario"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/llEspecialidad"
+            android:background="#1A6E6E6E"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvUsuario"
+                android:text="Correo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"/>
+
+            <TextView
+                android:id="@+id/txvUsuario"
+                android:text="@string/nameUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/llBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/llusuario"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="#B65538"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:text="@string/btnEliminar"
+                android:textAlignment="gravity"
+                app:cornerRadius="10dp" />
+
+            <Button
+                android:id="@+id/btnRegresar"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="@color/punzon"
+                android:text="@string/btnEditar"
+                android:textAlignment="gravity"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

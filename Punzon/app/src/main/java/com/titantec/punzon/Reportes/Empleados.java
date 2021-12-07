@@ -48,7 +48,7 @@ public class Empleados extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Query query = firestore.collection("Empleado");
+        Query query = firestore.collection("Empleados");
         FirestoreRecyclerOptions<Empleado> firestoreRO =
                 new FirestoreRecyclerOptions.Builder<Empleado>().setQuery(query, Empleado.class).build();
         EmpleadoAdapter = new EmpleadoAdapter(firestoreRO);
@@ -75,6 +75,8 @@ public class Empleados extends Fragment {
             super(options);
         }
 
+
+
         @Override
         protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Empleado model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
@@ -82,8 +84,8 @@ public class Empleados extends Fragment {
             holder.txvDoc.setText(id);
             holder.txvNom.setText(model.getNombre());
             holder.txvApe.setText(model.getApellido());
-            Empleado p = new Empleado(model.getNombre(), model.getApellido(), model.getTipoDocumento(),
-                    model.getDocumento(), model.getTipoEmpleado(), model.getCargo(), model.getEspecialidad(), model.getNumero(), model.getEmail(), model.getContraseña(), model.getImagen());
+            Empleado p = new Empleado(model.getNombre(), model.getApellido(), model.getTipoDocumento(), model.getDocumento(),
+                    model.getTipoEmpleado(), model.getCargo(), model.getEspecialidad(), model.getNumero(), model.getEmail(), model.getContraseña(), model.getUrlImagen());
             EmpleadoList.add(p);
         }
 

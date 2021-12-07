@@ -14,11 +14,13 @@ public class Empleado {
     private String email;
     private String contraseña;
     private String imagen;
+    private String urlImagen;
 
     public Empleado() {
     }
 
-    public Empleado(String nombre, String apellido, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña, String imagen) {
+    public Empleado(String nombre, String apellido, String tipoDocumento, String documento, String tipoEmpleado, 
+                    String cargo, String especialidad, String numero, String email, String contraseña, String imagen, String urlImagen) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.tipoDocumento = tipoDocumento;
@@ -30,6 +32,10 @@ public class Empleado {
         this.email = email;
         this.contraseña = contraseña;
         this.imagen = imagen;
+        this.urlImagen = urlImagen;
+    }
+
+    public Empleado(String nombre, String apellido, String tipoDocumento, String documento, String tipoEmpleado, String cargo, String especialidad, String numero, String email, String contraseña, String urlImagen) {
     }
 
     public String getNombre() {
@@ -119,4 +125,14 @@ public class Empleado {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+
+
 }

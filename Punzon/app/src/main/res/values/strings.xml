@@ -47,6 +47,10 @@
     <string name="btnConsultar">CONSULTAR</string>
     <string name="btnGenerarNombreUsuario">GENERAR</string>
     <string name="numero">Numero de telefono</string>
+    <string name="btnImagen">GALERIA</string>
+    <string name="btnImagenes">CÁMARA</string>
+
+
     <string-array name="id_type_array">
         <item>Seleccione...</item>
         <item>Cédula de ciudadanía</item>

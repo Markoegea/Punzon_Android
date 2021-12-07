@@ -12,18 +12,15 @@
             android:id="@+id/Registro_Clientes"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Registro Clientes" />
-        <item
-            android:id="@+id/Registro_Empleados"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="Registrar Empleado" />
+
         <item
             android:id="@+id/Registro_Productos"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Registrar Productos" />
         <item
             android:id="@+id/Ver_Empleados"
-            android:icon="@drawable/ic_launcher_foreground"
-            android:title="Ver Empleados" />
+            android:icon="@drawable/empleado_icon"
+            android:title="Datos Empleados" />
         <item
             android:id="@+id/Mi_cuenta"
             android:icon="@drawable/ic_launcher_foreground"

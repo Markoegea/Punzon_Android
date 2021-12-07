@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Actualizar Datos"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:background="#B65538"/>
+
+    <LinearLayout
+        android:id="@+id/llimagen"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageEmpleado"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo"
+        app:civ_border_color="#B65538"
+        app:civ_border_width="1dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNom"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageEmpleado"
+        android:baselineAligned="false"
+        android:background="#1A6E6E6E"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvNom"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/name"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/txtNom1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/name"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:background="@drawable/redondeado"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llApe"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llNom"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvApe"
+            android:text="@string/last_name"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"/>
+
+        <EditText
+            android:id="@+id/txtApe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/last_name"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llTipoDocumento"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llApe"
+        android:baselineAligned="false"
+        android:background="#1A6E6E6E"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTipoDoccumento"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Tipo Doc"
+            android:textSize="20dp"
+            android:textColor="#000"
+            />
+
+        <EditText
+            android:id="@+id/txtTipoDoccumento"
+            android:text="Tipo Doc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llDoc"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llTipoDocumento"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDoc"
+            android:text="@string/id"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp" />
+
+        <EditText
+            android:id="@+id/txtDoc"
+            android:text="@string/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llNumero"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llDoc"
+        android:background="#1A6E6E6E"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvNumero"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="N Teléfono"
+            android:textSize="20dp"
+            android:textColor="#000" />
+
+        <EditText
+            android:id="@+id/txtNumero"
+            android:text="N Teléfono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llTipoEmpleado"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llNumero"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvTipoEmpleado"
+            android:text="Tipo Emp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp" />
+
+        <EditText
+            android:id="@+id/txtTipoEmpleado"
+            android:text="T Empleados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCargo"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llTipoEmpleado"
+        android:background="#1A6E6E6E"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCargo"
+            android:text="@string/txtCargo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"/>
+
+        <EditText
+            android:id="@+id/txtCargo"
+            android:text="@string/txtCargo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEspecialidad"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llCargo"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvEspecialidad"
+            android:text="@string/txtEspecialidad"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"/>
+
+        <EditText
+            android:id="@+id/txtEspecialidad"
+            android:text="@string/txtEspecialidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llusuario"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/llEspecialidad"
+        android:background="#1A6E6E6E"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvUsuario"
+            android:text="Correo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"/>
+
+        <EditText
+            android:id="@+id/txtUsuario"
+            android:text="@string/nameUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/redondeado"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/llusuario"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#BFB65538"
+            android:gravity="center"
+            android:text="ACTUALIZAR"
+            android:textAlignment="gravity"
+            app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+
+</LinearLayout>
