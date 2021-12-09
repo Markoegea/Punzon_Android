@@ -36,9 +36,6 @@
                 app:layout_constraintTop_toTopOf="parent">
 
 
-
-
-
                 <EditText
                     android:id="@+id/txtname"
                     android:layout_width="match_parent"
@@ -50,7 +47,7 @@
                     android:minHeight="40dp"
                     android:selectAllOnFocus="true"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
@@ -64,7 +61,7 @@
                     android:minHeight="40dp"
                     android:selectAllOnFocus="true"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
@@ -82,7 +79,8 @@
                         android:gravity="center"
                         android:text="@string/txtIdType"
                         android:textAlignment="center"
-                        android:textColor="#816E6E64"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <Spinner
@@ -102,7 +100,7 @@
                     android:minHeight="40dp"
                     android:selectAllOnFocus="true"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -115,7 +113,7 @@
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck" />
 
@@ -131,7 +129,8 @@
                         android:gravity="center"
                         android:text="@string/txtEmType"
                         android:textAlignment="center"
-                        android:textColor="#826E6E6E"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <Spinner
@@ -155,7 +154,8 @@
                         android:gravity="center"
                         android:text="@string/txtCargo"
                         android:textAlignment="center"
-                        android:textColor="#816E6E64"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <Spinner
@@ -178,7 +178,8 @@
                         android:gravity="center"
                         android:text="@string/txtEspecialidad"
                         android:textAlignment="center"
-                        android:textColor="#816E6E64"
+                        android:textColor="#000000"
+                        android:textColorHint="#000000"
                         android:textSize="16sp" />
 
                     <Spinner
@@ -199,7 +200,7 @@
                     android:minHeight="40dp"
                     android:selectAllOnFocus="true"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
@@ -216,7 +217,7 @@
                     android:password="true"
                     android:selectAllOnFocus="true"
                     android:textColor="#B65538"
-                    android:textColorHint="#816E6E64"
+                    android:textColorHint="#000000"
                     android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 

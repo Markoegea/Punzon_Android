@@ -38,6 +38,7 @@
             android:inputType="textPersonName"
             android:minHeight="40dp"
             android:selectAllOnFocus="true"
+            android:textColorHint="#000000"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <EditText
@@ -49,6 +50,7 @@
             android:inputType="textPersonName"
             android:minHeight="40dp"
             android:selectAllOnFocus="true"
+            android:textColorHint="#000000"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <LinearLayout
@@ -64,6 +66,8 @@
                 android:layout_marginBottom="0dp"
                 android:text="@string/txtIdType"
                 android:textAlignment="viewStart"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
                 android:textSize="16sp" />
 
             <Spinner
@@ -86,6 +90,7 @@
             android:inputType="text"
             android:minHeight="40dp"
             android:selectAllOnFocus="true"
+            android:textColorHint="#000000"
             tools:ignore="TouchTargetSizeCheck" />
 
         <EditText
@@ -95,7 +100,8 @@
             android:ems="10"
             android:hint="Telefono"
             android:inputType="number"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="#000000" />
 
         <EditText
             android:id="@+id/userCliente"
@@ -108,6 +114,7 @@
             android:inputType="textEmailAddress"
             android:minHeight="40dp"
             android:selectAllOnFocus="true"
+            android:textColorHint="#000000"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <EditText
@@ -123,6 +130,7 @@
             android:inputType="textPassword"
             android:minHeight="40dp"
             android:selectAllOnFocus="true"
+            android:textColorHint="#000000"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <EditText
@@ -132,7 +140,8 @@
             android:ems="10"
             android:hint="Direccion"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="#000000" />
 
         <Button
             android:id="@+id/BtnRegCliente"

@@ -49,6 +49,8 @@
                     android:ems="10"
                     android:hint="Nombre"
                     android:inputType="textPersonName"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000"
                     tools:ignore="TouchTargetSizeCheck" />
 
                 <EditText
@@ -59,7 +61,9 @@
                     android:ems="10"
                     android:hint="Marca"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000" />
             </LinearLayout>
 
             <EditText
@@ -71,7 +75,9 @@
                 android:hint="Descripcion"
                 android:inputType="textMultiLine"
                 android:minHeight="48dp"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:textColor="#000000"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:textColorHint="#000000" />
 
             <EditText
                 android:id="@+id/txvId"
@@ -80,7 +86,9 @@
                 android:ems="10"
                 android:hint="Id"
                 android:inputType="textPersonName"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                android:textColorHint="#000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -95,7 +103,9 @@
                     android:ems="10"
                     android:hint="Precio"
                     android:inputType="number"
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000" />
 
                 <EditText
                     android:id="@+id/txvCantidad"
@@ -105,7 +115,9 @@
                     android:ems="10"
                     android:hint="Cantidad"
                     android:inputType="number"
-                    android:minHeight="48dp" />
+                    android:minHeight="48dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#000000" />
             </LinearLayout>
 
             <Button
