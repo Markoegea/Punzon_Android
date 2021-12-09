@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -28,17 +31,24 @@ import com.titantec.punzon.Modelos.Productos;
 import com.titantec.punzon.databinding.MainPageBinding;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainPage extends Fragment {
     RecyclerView rv;
-    MainPageBinding mainPageBinding;
+    static MainPageBinding mainPageBinding;
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     ProductoAdapter productoAdapter;
-    List<Productos> productosList = new ArrayList<>();
+    ArrayList<Productos> productosList = new ArrayList<>();
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mainPageBinding = MainPageBinding.inflate(inflater, container, false);
+
+        if(mainPageBinding == null) {
+            mainPageBinding = MainPageBinding.inflate(inflater, container, false);
+        }
+
         View root = mainPageBinding.getRoot();
 
         rv = mainPageBinding.recyclerView;
@@ -71,12 +81,11 @@ public class MainPage extends Fragment {
         mainPageBinding = null;
     }
 
-    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
-    private List<Productos> listaCarro;
-
-
+    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder> {
+        private ArrayList<Productos> listaCarro;
         private View view;
-        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options, View v){
+
+        public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Productos> options, View v) {
             super(options);
             this.view = v;
             listaCarro = new ArrayList<>();
@@ -86,17 +95,16 @@ public class MainPage extends Fragment {
         @Override
         protected void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position, @NonNull Productos model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
-            final String id= documentSnapshot.getId();
+            final String id = documentSnapshot.getId();
 
             holder.txvProducto.setText(model.getNombre());
             holder.txvCosto.setText(model.getPrecio());
 
 
-
             Glide.with(view.getContext()).load(model.getImagen()).into(holder.imgProduct);
 
-            Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
-                    model.getDescripcion(),model.getImagen(),model.getCantidad(),model.getMarca());
+            Productos p = new Productos(model.getNombre(), model.getId(), model.getPrecio(),
+                    model.getDescripcion(), model.getImagen(), model.getCantidad(), model.getMarca());
             productosList.add(p);
         }
 
@@ -109,22 +117,20 @@ public class MainPage extends Fragment {
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView txvProducto,txvCosto;
+            TextView txvProducto, txvCosto;
             Button btnAgregar;
             ImageView imgProduct;
 
 
-
-            public ViewHolder(@NonNull View itemView){
+            public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 txvProducto = itemView.findViewById(R.id.txvProducto);
-                txvCosto= itemView.findViewById(R.id.txvApe);
+                txvCosto = itemView.findViewById(R.id.txvApe);
                 btnAgregar = itemView.findViewById(R.id.btnAgregar);
                 imgProduct = itemView.findViewById(R.id.imgProduct);
 
 
                 btnAgregar.setOnClickListener(agregarProductoClickListener);
-
 
 
                 itemView.setOnClickListener(new View.OnClickListener() {
@@ -133,14 +139,14 @@ public class MainPage extends Fragment {
                         NavController abrir = Navigation.findNavController(v);
 
                         Bundle bundle = new Bundle();
-                        bundle.putString("Nombre",productosList.get(getLayoutPosition()).getNombre());
-                        bundle.putString("Id",productosList.get(getLayoutPosition()).getId());
-                        bundle.putString("Precio",productosList.get(getLayoutPosition()).getPrecio());
-                        bundle.putString("Descripcion",productosList.get(getLayoutPosition()).getDescripcion());
-                        bundle.putString("Cantidad",productosList.get(getLayoutPosition()).getCantidad());
-                        bundle.putString("Marca",productosList.get(getLayoutPosition()).getMarca());
-                        bundle.putString("Imagen",productosList.get(getLayoutPosition()).getImagen());
-                        getParentFragmentManager().setFragmentResult("param1",bundle);
+                        bundle.putString("Nombre", productosList.get(getLayoutPosition()).getNombre());
+                        bundle.putString("Id", productosList.get(getLayoutPosition()).getId());
+                        bundle.putString("Precio", productosList.get(getLayoutPosition()).getPrecio());
+                        bundle.putString("Descripcion", productosList.get(getLayoutPosition()).getDescripcion());
+                        bundle.putString("Cantidad", productosList.get(getLayoutPosition()).getCantidad());
+                        bundle.putString("Marca", productosList.get(getLayoutPosition()).getMarca());
+                        bundle.putString("Imagen", productosList.get(getLayoutPosition()).getImagen());
+                        getParentFragmentManager().setFragmentResult("param1", bundle);
 
                         abrir.navigate(R.id.Ver_Inventario);
                     }
@@ -150,8 +156,27 @@ public class MainPage extends Fragment {
             private View.OnClickListener agregarProductoClickListener = view -> {
                 listaCarro.add(productosList.get(getBindingAdapterPosition()));
                 MainActivity actividadCatalogo = (MainActivity) MainPage.this.getActivity();
-                actividadCatalogo.actualizarNotificacion(listaCarro.size());
+                actividadCatalogo.actualizarNotificacion(listaCarro);
+                compraBaseDeDatos(productosList.get(getBindingAdapterPosition()));
             };
+
+            private void compraBaseDeDatos(Productos producto) {
+                /*Map<String, Object> productoMap = new HashMap<>();
+
+                productoMap.put("id", producto.getId());
+
+                firestore.collection("Ventas").document("").set(producto).addOnCompleteListener(task2 -> {
+                    if (task2.isSuccessful()) {
+                        Toast.makeText(v.getContext(), "Registro Exitoso", Toast.LENGTH_SHORT).show();
+                        limpiar();
+                        progressDialog.dismiss();
+                    } else {
+                        Toast.makeText(v.getContext(), "Fallo en el registro, " +
+                                "Revisalo y Intentalo otra vez", Toast.LENGTH_SHORT).show();
+                        progressDialog.dismiss();
+                    }
+                });*/
+            }
         }
     }
 }

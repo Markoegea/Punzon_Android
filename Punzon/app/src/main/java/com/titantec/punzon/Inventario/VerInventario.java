@@ -37,7 +37,10 @@ public class VerInventario extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        fragmentVerInventarioBinding = fragmentVerInventarioBinding.inflate(inflater, container, false);
+        if(fragmentVerInventarioBinding == null) {
+            fragmentVerInventarioBinding = fragmentVerInventarioBinding.inflate(inflater, container, false);
+        }
+
         View root = fragmentVerInventarioBinding.getRoot();
         txvnombre=fragmentVerInventarioBinding.TvNombre;
         txvprecio=fragmentVerInventarioBinding.TvPrecio;

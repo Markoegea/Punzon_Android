@@ -32,9 +32,14 @@ public class Ventas extends Fragment {
     FirebaseFirestore firestore = FirebaseFirestore.getInstance();
     ProductoAdapter productoAdapter;
     List<Productos> productosList = new ArrayList<>();
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        mainPageBinding = MainPageBinding.inflate(inflater, container, false);
+
+        if (mainPageBinding == null) {
+            mainPageBinding = MainPageBinding.inflate(inflater, container, false);
+        }
+
         View root = mainPageBinding.getRoot();
 
         rv = mainPageBinding.recyclerView;
@@ -67,21 +72,21 @@ public class Ventas extends Fragment {
         mainPageBinding = null;
     }
 
-    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder>{
+    public class ProductoAdapter extends FirestoreRecyclerAdapter<Productos, ProductoAdapter.ViewHolder> {
 
-        public ProductoAdapter (@NonNull FirestoreRecyclerOptions<Productos> options){
+        public ProductoAdapter(@NonNull FirestoreRecyclerOptions<Productos> options) {
             super(options);
         }
 
         @Override
         protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Productos model) {
             DocumentSnapshot documentSnapshot = getSnapshots().getSnapshot(holder.getAdapterPosition());
-            final String id= documentSnapshot.getId();
+            final String id = documentSnapshot.getId();
             holder.txvDoc.setText(id);
             holder.txvNom.setText(model.getNombre());
             holder.txvApe.setText(model.getPrecio());
-            Productos p = new Productos(model.getNombre(),model.getId(), model.getPrecio(),
-                    model.getDescripcion(), model.getImagen(), model.getCantidad(),model.getMarca());
+            Productos p = new Productos(model.getNombre(), model.getId(), model.getPrecio(),
+                    model.getDescripcion(), model.getImagen(), model.getCantidad(), model.getMarca());
             productosList.add(p);
         }
 
@@ -94,23 +99,18 @@ public class Ventas extends Fragment {
 
 
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView txvDoc,txvNom,txvApe;
-            public ViewHolder(@NonNull View itemView){
+            TextView txvDoc, txvNom, txvApe;
+
+            public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 txvDoc = itemView.findViewById(R.id.txvDoc);
-                txvNom= itemView.findViewById(R.id.txvNom);
+                txvNom = itemView.findViewById(R.id.txvNom);
                 txvApe = itemView.findViewById(R.id.txvApe);
-                itemView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        NavController abrir = Navigation.findNavController(v);
+                itemView.setOnClickListener(v -> {
+                    NavController abrir = Navigation.findNavController(v);
 
-                        Bundle bundle = new Bundle();
-
-                        /*Aqui va el modelo de datos*/
-
-                        abrir.navigate(R.id.Ver_Inventario);
-                    }
+                    /*Aqui va el modelo de datos*/
+                    abrir.navigate(R.id.Ver_Inventario);
                 });
             }
         }

@@ -44,42 +44,45 @@
         android:id="@+id/Nada"
         android:name="com.titantec.punzon.Nada"
         android:label="Nada"
-        tools:layout="@layout/activity_nada" >
-    </fragment>
+        tools:layout="@layout/activity_nada"/>
     <fragment
         android:id="@+id/Carrito"
         android:name="com.titantec.punzon.Inventario.CarroInventario"
         android:label="Carrito"
-        tools:layout="@layout/activity_carro_inventario" >
-    </fragment>
+        tools:layout="@layout/activity_carro_inventario"/>
     <fragment
         android:id="@+id/Registro_Productos"
         android:name="com.titantec.punzon.Inventario.RegistrarProductos"
         android:label="Registro Productos"
-        tools:layout="@layout/activity_registrar_producto" >
-    </fragment>
+        tools:layout="@layout/activity_registrar_producto"/>
     <fragment
         android:id="@+id/Reporte_Clientes"
         android:name="com.titantec.punzon.Reportes.Clientes"
         android:label="Reporte Clientes"
-        tools:layout="@layout/report_clientes" >
-    </fragment>
+        tools:layout="@layout/report_clientes"/>
     <fragment
         android:id="@+id/Reporte_Empleados"
         android:name="com.titantec.punzon.Reportes.Empleados"
         android:label="Reporte Empleados"
-        tools:layout="@layout/report_empleados" >
-    </fragment>
+        tools:layout="@layout/report_empleados"/>
     <fragment
         android:id="@+id/Reporte_Productos"
         android:name="com.titantec.punzon.Reportes.Productos"
         android:label="Reporte Productos"
-        tools:layout="@layout/report_productos" >
-    </fragment>
+        tools:layout="@layout/report_productos"/>
     <fragment
         android:id="@+id/Reporte_Ventas"
         android:name="com.titantec.punzon.Reportes.Ventas"
         android:label="Reporte Ventas"
-        tools:layout="@layout/report_ventas" >
+        tools:layout="@layout/report_ventas"/>
+    <fragment
+        android:id="@+id/Venta_Carritos"
+        android:name="com.titantec.punzon.Inventario.ShoppingCarFragment"
+        android:label="Carrito de compras"
+        tools:layout="@layout/report_ventas">
+
+        <argument
+            android:name="myArg"
+            app:argType="com.titantec.punzon.Modelos.Productos" />
     </fragment>
 </navigation>

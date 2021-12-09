@@ -1,6 +1,12 @@
 package com.titantec.punzon.Modelos;
 
-public class Productos {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
+public class Productos implements Parcelable {
+
     private String nombre;
     private String id;
     private String precio;
@@ -21,6 +27,28 @@ public class Productos {
         this.cantidad = cantidad;
         this.marca = marca;
     }
+
+    protected Productos(Parcel in) {
+        nombre = in.readString();
+        id = in.readString();
+        precio = in.readString();
+        descripcion = in.readString();
+        imagen = in.readString();
+        cantidad = in.readString();
+        marca = in.readString();
+    }
+
+    public static final Creator<Productos> CREATOR = new Creator<Productos>() {
+        @Override
+        public Productos createFromParcel(Parcel in) {
+            return new Productos(in);
+        }
+
+        @Override
+        public Productos[] newArray(int size) {
+            return new Productos[size];
+        }
+    };
 
     public String getNombre() {
         return nombre;
@@ -76,5 +104,21 @@ public class Productos {
 
     public void setMarca(String marca) {
         this.marca = marca;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(nombre);
+        parcel.writeString(id);
+        parcel.writeString(precio);
+        parcel.writeString(descripcion);
+        parcel.writeString(imagen);
+        parcel.writeString(cantidad);
+        parcel.writeString(marca);
     }
 }
