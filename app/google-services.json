@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "136928811723",
-    "project_id": "punzon-534f6",
-    "storage_bucket": "punzon-534f6.appspot.com"
+    "project_number": "238025231398",
+    "firebase_url": "https://lucy-e7ab2.firebaseio.com",
+    "project_id": "lucy-e7ab2",
+    "storage_bucket": "lucy-e7ab2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:136928811723:android:d7a4c9c7ac5d69d4d5d94e",
+        "mobilesdk_app_id": "1:238025231398:android:ff47b6764f77b74a85aae7",
         "android_client_info": {
-          "package_name": "com.titantec.ferreteriapunzon"
+          "package_name": "com.titantec.punzon"
         }
       },
       "oauth_client": [
         {
-          "client_id": "136928811723-fq1uccsldk24bukovvg818em2rmd9mmo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.titantec.ferreteriapunzon",
-            "certificate_hash": "2fe8a2bacbae8183fcbf20407aacd8c5062ccbb3"
-          }
-        },
-        {
-          "client_id": "136928811723-4nrbk4ttqbbauhhsvtj67cskrjtaoi9c.apps.googleusercontent.com",
+          "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD4DhW7UG_t9t9sE20l2wp_xITfjiBb-wA"
+          "current_key": "AIzaSyCFvtpVjf4ki0Bm695ulfn4CaN4Q0-PE14"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "136928811723-4nrbk4ttqbbauhhsvtj67cskrjtaoi9c.apps.googleusercontent.com",
+              "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,27 +37,56 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:136928811723:android:fa4990fece0b35b7d5d94e",
+        "mobilesdk_app_id": "1:238025231398:android:5ca02893e5f03a3985aae7",
         "android_client_info": {
-          "package_name": "com.titantec.punzon"
+          "package_name": "com.titantec.semana_4_1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "136928811723-4nrbk4ttqbbauhhsvtj67cskrjtaoi9c.apps.googleusercontent.com",
+          "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD4DhW7UG_t9t9sE20l2wp_xITfjiBb-wA"
+          "current_key": "AIzaSyCFvtpVjf4ki0Bm695ulfn4CaN4Q0-PE14"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "136928811723-4nrbk4ttqbbauhhsvtj67cskrjtaoi9c.apps.googleusercontent.com",
+              "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238025231398:android:b3ad6ac623eb024285aae7",
+        "android_client_info": {
+          "package_name": "com.titantec.semana_4_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFvtpVjf4ki0Bm695ulfn4CaN4Q0-PE14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238025231398-rbaeh9t2heblt7u2eargt9m7hs8koa1m.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
